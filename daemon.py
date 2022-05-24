@@ -4,7 +4,7 @@ from xmlrpc.server import SimpleXMLRPCRequestHandler
 from pprint import pprint
 
 
-def flush_ptz_data():
+def flush_ptz_data(ptz_data):
     with open('ptz_data.json', 'w') as f:
         f.write(json.dumps(ptz_data, indent=4))
 
@@ -22,12 +22,12 @@ def start_daemon():
             
             def set(self, camera, key, value):
                 ptz_data[camera][key] = value
-                flush_ptz_data()
+                flush_ptz_data(ptz_data)
                 return True
 
             def log(self, data):
                 ptz_data.get(log, []).append(data)
-                flush_ptz_data()
+                flush_ptz_data(ptz_data)
                 return True
 
         @server.register_function

@@ -5,8 +5,10 @@ function createImage(){
    color="$3"
    magick convert -size "288x288" -background $color -fill black \
 	-gravity Center caption:"$text" \
-	-flatten "$name"
+	-flatten "StreamDeckButtons/$name"
 }
+
+mkdir -p StreamDeckButtons
 
 createImage "Main Worship Center" "MWC.png" "lightblue"
 createImage "Main Worship Center PNP" "MWCP.png" "lightblue"

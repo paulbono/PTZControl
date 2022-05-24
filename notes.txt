@@ -1,0 +1,19 @@
+Main worship center (krause)
+{'zoom': '3669', 'pan': 'FBB1', 'tilt': 'FFC7', 'focus': '0246'}
+main {'zoom': '36C4', 'pan': 'FBC2', 'tilt': 'FFD3', 'focus': '0254'}
+
+response (krause) 
+{'zoom': '3669', 'pan': 'FBA2', 'tilt': 'FFD3', 'focus': '023A'}
+
+wide alt (krause)
+{'zoom': '0000', 'pan': '0000', 'tilt': '0000', 'focus': '068D'}
+
+main sermon center (krause)
+{'zoom': '34EB', 'pan': 'FBE2', 'tilt': 'FFE6', 'focus': '0200'}
+
+alt sermon center (krause)
+{'zoom': '368E', 'pan': '004C', 'tilt': 'FFD0', 'focus': '0258'}
+
+main altar center (krause)
+main {'zoom': '39A2', 'pan': 'FBED', 'tilt': 'FFEA', 'focus': '0361'}
+

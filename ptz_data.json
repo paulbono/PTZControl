@@ -48,6 +48,12 @@
             "tilt": "ffea",
             "zoom": "39a8",
             "focus": "0368"
+        },
+        "current_pos": {
+            "pan": "fba8",
+            "tilt": "ffc7",
+            "zoom": "3669",
+            "focus": "0249"
         }
     },
     "alt": {
