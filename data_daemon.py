@@ -5,10 +5,14 @@ from xmlrpc.server import SimpleXMLRPCServer
 
 
 class ptz_data_handler():
-    def __init__(self):
+    def __init__(self, args):
         self._ptz_data_last_read_time = 0
         self.ptz_data = None
         self.file_path = 'ptz_data.json'
+        if args.debug:
+            self.logRequests=True
+        else:
+            self.logRequests=False
         
     def flush_ptz_data(self):
         with open(self.file_path, 'w') as f:
@@ -25,7 +29,7 @@ class ptz_data_handler():
         
     def start_daemon(self):
         # Create server
-        with SimpleXMLRPCServer(('127.0.0.1', 8001), logRequests=False, allow_none=True) as server:
+        with SimpleXMLRPCServer(('127.0.0.1', 8001), logRequests=self.logRequests, allow_none=True) as server:
             server.register_introspection_functions()
             self.reload_ptz_data()
 
@@ -61,5 +65,8 @@ class ptz_data_handler():
             server.serve_forever()
 
 if __name__ == "__main__":
-    daemon = ptz_data_handler()
+    parser = argparse.ArgumentParser(description='Data daemon for handling PTZ data')
+    parser.add_argument('--debug', dest='debug', action='store_true', default=False, help='Launch debug windows')
+    args = parser.parse_args()
+    daemon = ptz_data_handler(args)
     daemon.start_daemon()

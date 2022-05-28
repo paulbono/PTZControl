@@ -49,6 +49,12 @@
             "zoom": "39a8",
             "focus": "0368"
         },
+        "wide": {
+            "pan": "0000",
+            "tilt": "0000",
+            "zoom": "0000",
+            "focus": "068D"
+        },
         "current_pos": {
             "pan": "fba8",
             "tilt": "ffc7",
@@ -105,6 +111,12 @@
             "tilt": "ffd5",
             "zoom": "3926",
             "focus": "033e"
+        },
+        "wide": {
+            "pan": "0000",
+            "tilt": "0000",
+            "zoom": "0000",
+            "focus": "068D"
         }
     }
 }
