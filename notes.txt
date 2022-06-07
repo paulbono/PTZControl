@@ -1,19 +1,30 @@
-Main worship center (krause)
-{'zoom': '3669', 'pan': 'FBB1', 'tilt': 'FFC7', 'focus': '0246'}
+krause
+worship center
+main {'zoom': '3669', 'pan': 'FBB1', 'tilt': 'FFC7', 'focus': '0246'}
 main {'zoom': '36C4', 'pan': 'FBC2', 'tilt': 'FFD3', 'focus': '0254'}
-
-response (krause) 
-{'zoom': '3669', 'pan': 'FBA2', 'tilt': 'FFD3', 'focus': '023A'}
-
-wide alt (krause)
-{'zoom': '0000', 'pan': '0000', 'tilt': '0000', 'focus': '068D'}
-
-main sermon center (krause)
-{'zoom': '34EB', 'pan': 'FBE2', 'tilt': 'FFE6', 'focus': '0200'}
-
-alt sermon center (krause)
-{'zoom': '368E', 'pan': '004C', 'tilt': 'FFD0', 'focus': '0258'}
-
-main altar center (krause)
+response
+main {'zoom': '3669', 'pan': 'FBA2', 'tilt': 'FFD3', 'focus': '023A'}
+sermon center
+main {'zoom': '34EB', 'pan': 'FBE2', 'tilt': 'FFE6', 'focus': '0200'}
+alt {'zoom': '368E', 'pan': '004C', 'tilt': 'FFD0', 'focus': '0258'}
+altar center
 main {'zoom': '39A2', 'pan': 'FBED', 'tilt': 'FFEA', 'focus': '0361'}
 
+taylor
+main worship center
+main {'zoom': '3222', 'pan': 'FBBA', 'tilt': 'FFD4', 'focus': '01DB'}
+pulpit 1/3
+alt {'zoom': '35BF', 'pan': '00CD', 'tilt': 'FFCE', 'focus': '0233'}
+
+gerbing
+sermon center
+main {'zoom': '360B', 'pan': 'FBCB', 'tilt': 'FFDD', 'focus': '022D'}
+sermon 1/3
+alt {'zoom': '3632', 'pan': '0027', 'tilt': 'FFC7', 'focus': '024B'}
+sermon center
+alt {'zoom': '3632', 'pan': '0043', 'tilt': 'FFC7', 'focus': '0243'}
+alt {'zoom': '3632', 'pan': '003E', 'tilt': 'FFC7', 'focus': '0245'}
+
+sleepysleepy
+main {'zoom': '0000', 'pan': '0990', 'tilt': 'FE50', 'focus': '0666'}
+alt {'zoom': '0000', 'pan': '0990', 'tilt': 'FE50', 'focus': '0677'}

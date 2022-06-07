@@ -1,4 +1,111 @@
 {
+    "advance_scene_list": [
+        {
+            "display": "Worship Center",
+            "camera": "main",
+            "preset": "worship_center"
+        },
+        {
+            "display": "Worship Center 1/3",
+            "camera": "main",
+            "preset": "worship_center_pnp"
+        },
+        {
+            "display": "Pulpit Center",
+            "camera": "main",
+            "preset": "pulpit_center"
+        },
+        {
+            "display": "Pulpit Center 1/3",
+            "camera": "main",
+            "preset": "pulpit_center_pnp"
+        },
+        {
+            "display": "Sermon Center",
+            "camera": "main",
+            "preset": "sermon_center"
+        },
+        {
+            "display": "Sermon Center 1/3",
+            "camera": "main",
+            "preset": "sermon_center_pnp"
+        },
+        {
+            "display": "Altar Center",
+            "camera": "main",
+            "preset": "altar_center"
+        },
+        {
+            "display": "Altar Center 1/3",
+            "camera": "main",
+            "preset": "altar_center_pnp"
+        },
+        {
+            "display": "Wide",
+            "camera": "main",
+            "preset": "wide"
+        },
+        {
+            "display": "Baptism",
+            "camera": "main",
+            "preset": "baptism"
+        },
+        {
+            "display": "Worship Center",
+            "camera": "alt",
+            "preset": "worship_center"
+        },
+        {
+            "display": "Worship Center 1/3",
+            "camera": "alt",
+            "preset": "worship_center_pnp"
+        },
+        {
+            "display": "Pulpit Center",
+            "camera": "alt",
+            "preset": "pulpit_center"
+        },
+        {
+            "display": "Pulpit Center 1/3",
+            "camera": "alt",
+            "preset": "pulpit_center_pnp"
+        },
+        {
+            "display": "Sermon Center",
+            "camera": "alt",
+            "preset": "sermon_center"
+        },
+        {
+            "display": "Sermon Center 1/3",
+            "camera": "alt",
+            "preset": "sermon_center_pnp"
+        },
+        {
+            "display": "Altar Center",
+            "camera": "alt",
+            "preset": "altar_center"
+        },
+        {
+            "display": "Altar Center 1/3",
+            "camera": "alt",
+            "preset": "altar_center_pnp"
+        },
+        {
+            "display": "Wide",
+            "camera": "alt",
+            "preset": "wide"
+        },
+        {
+            "display": "Wide",
+            "camera": "main",
+            "preset": "wide"
+        },
+        {
+            "display": "Baptism",
+            "camera": "main",
+            "preset": "baptism"
+        }
+    ],
     "main": {
         "ip": "10.0.0.132",
         "worship_center": {
@@ -55,11 +162,23 @@
             "zoom": "0000",
             "focus": "068D"
         },
+        "baptism": {
+            "zoom": "2DF3",
+            "pan": "FB5C",
+            "tilt": "FFD4",
+            "focus": "0207"
+        },
+        "goodnight": {
+            "zoom": "0000",
+            "pan": "0990",
+            "tilt": "FE50",
+            "focus": "0666"
+        },
         "current_pos": {
-            "pan": "fba8",
-            "tilt": "ffc7",
-            "zoom": "3669",
-            "focus": "0249"
+            "pan": "0000",
+            "tilt": "0000",
+            "zoom": "0000",
+            "focus": "068D"
         }
     },
     "alt": {
@@ -117,6 +236,12 @@
             "tilt": "0000",
             "zoom": "0000",
             "focus": "068D"
+        },
+        "goodnight": {
+            "zoom": "0000",
+            "pan": "0990",
+            "tilt": "FE50",
+            "focus": "0677"
         }
     }
 }
