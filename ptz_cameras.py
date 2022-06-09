@@ -57,7 +57,7 @@ def get_connection(ip):
     s.connect((ip, CAMERA_PORT))
     return s
 
-def send_pan_tilt_zoom_focus(conn, preset):
+def send_pan_tilt_zoom_focus(camera, conn, preset):
     pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
     conn.send(pan_tilt_command)
     # print(conn.recv(1024).hex())
@@ -80,7 +80,7 @@ def send_commands(data_server, args, camera):
     if args.off:
         preset = data_server.get(camera, "goodnight")
         if preset:
-            send_pan_tilt_zoom_focus(preset)
+            send_pan_tilt_zoom_focus(camera, conn, preset)
         else:
             print("Can't find that preset")
         data = bytes.fromhex(OFF_COMMAND)
@@ -91,7 +91,7 @@ def send_commands(data_server, args, camera):
     if args.preset:
         preset = data_server.get(camera, args.preset)
         if preset:
-            send_pan_tilt_zoom_focus(preset)
+            send_pan_tilt_zoom_focus(camera, conn, preset)
         else:
             print("Can't find that preset")
     if args.query_zoom or args.query_all:
