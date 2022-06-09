@@ -121,7 +121,7 @@ def send_commands(data_server, args, camera):
             focus_value = "{}{}{}{}".format(focus_response["p"], focus_response["q"], focus_response["r"], focus_response["s"])
             query_results["focus"] = focus_value
     if args.query_zoom or args.query_pan_tilt or args.query_focus or args.query_all:
-        print(camera, query_results)
+        print(camera, json.dumps(query_results))
         if args.log:
             data_server.log(xmlrpc.client.dumps(({camera: query_results},)))
     conn.close()
