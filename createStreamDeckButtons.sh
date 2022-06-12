@@ -14,23 +14,23 @@ function createImage(){
 
 mkdir -p StreamDeckButtons
 
-createImage "Main Worship Center" "MWC.png" "blue" &
-createImage "Main Worship Center PNP" "MWCP.png" "blue" &
-createImage "Main Pulpit Center" "MPC.png" "blue" &
-createImage "Main Pulpit Center PNP" "MPCP.png" "blue" &
-createImage "Main Sermon Center" "MSC.png" "blue" &
-createImage "Main Sermon Center PNP" "MSCP.png" "blue" &
-createImage "Main Altar Center" "MAC.png" "blue" &
-createImage "Main Altar Center PNP" "MACP.png" "blue" &
-createImage "Main Wide" "MW.png" "blue" &
-createImage "Main Baptism" "MB.png" "blue" &
+createImage "Cam 5 Worship Center" "MWC.png" "blue" &
+createImage "Cam 5 Worship PNP" "MWCP.png" "blue" &
+createImage "Cam 5 Pulpit Center" "MPC.png" "blue" &
+createImage "Cam 5 Pulpit PNP" "MPCP.png" "blue" &
+createImage "Cam 5 Sermon Center" "MSC.png" "blue" &
+createImage "Cam 5 Sermon PNP" "MSCP.png" "blue" &
+createImage "Cam 5 Altar Center" "MAC.png" "blue" &
+createImage "Cam 5 Altar PNP" "MACP.png" "blue" &
+createImage "Cam 5 Wide" "MW.png" "blue" &
+createImage "Cam 5 Baptism" "MB.png" "blue" &
 
-createImage "Alt Worship Center" "AWC.png" "green" &
-createImage "Alt Worship Center PNP" "AWCP.png" "green" &
-createImage "Alt Pulpit Center" "APC.png" "green" &
-createImage "Alt Pulpit Center PNP" "APCP.png" "green" &
-createImage "Alt Sermon Center" "ASC.png" "green" &
-createImage "Alt Sermon Center PNP" "ASCP.png" "green" &
-createImage "Alt Altar Center" "AAC.png" "green" &
-createImage "Alt Altar Center PNP" "AACP.png" "green" &
-createImage "Alt Wide" "AW.png" "green"
+createImage "Cam 6 Worship Center" "AWC.png" "green" &
+createImage "Cam 6 Worship PNP" "AWCP.png" "green" &
+createImage "Cam 6 Pulpit Center" "APC.png" "green" &
+createImage "Cam 6 Pulpit PNP" "APCP.png" "green" &
+createImage "Cam 6 Sermon Center" "ASC.png" "green" &
+createImage "Cam 6 Sermon PNP" "ASCP.png" "green" &
+createImage "Cam 6 Altar Center" "AAC.png" "green" &
+createImage "Cam 6 Altar PNP" "AACP.png" "green" &
+createImage "Cam 6 Wide" "AW.png" "green"
