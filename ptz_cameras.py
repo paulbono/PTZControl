@@ -6,6 +6,7 @@ import subprocess
 import sys
 import time
 import xmlrpc.client
+from threading import Thread
 
 
 CAMERA_PORT = 1259
@@ -13,36 +14,24 @@ PAN_SPEED_MAX = "18"
 TILT_SPEED_MAX = "14"
 ON_COMMAND = "8101040002FF"
 OFF_COMMAND = "8101040003FF"
-PAN_TILT_COMMAND = "81010602{PAN_SPEED}{TILT_SPEED}0{PAN[0]}0{PAN[1]}0{PAN[2]}0{PAN[3]}0{TILT[0]}0{TILT[1]}0{TILT[2]}0{TILT[3]}FF"
+PAN_TILT_ABSOLUTE_TYPE = "02"
+PAN_TILT_RELATIVE_TYPE = "03"
+PAN_TILT_COMMAND = "810106{PAN_TILT_TYPE}{PAN_SPEED}{TILT_SPEED}0{PAN[0]}0{PAN[1]}0{PAN[2]}0{PAN[3]}0{TILT[0]}0{TILT[1]}0{TILT[2]}0{TILT[3]}FF"
 PAN_TILT_INQ_COMMAND = "81090612FF"
-PAN_TILT_UP_DIR = "0301"
-PAN_TILT_DOWN_DIR = "0302"
-PAN_TILT_LEFT_DIR = "0103"
-PAN_TILT_RIGHT_DIR = "0203"
-PAN_TILT_DIR_COMMAND = "81010601{PAN_SPEED}{TILT_SPEED}{DIRECTION}FF"
+#[Move left 01 or right 02 or stay 03][Move Up 01 or down 02 or stay 03]
+LEFT = "01"
+UP = "01"
+RIGHT = "02"
+DOWN = "02"
+STAY = "03"
+PAN_TILT_DIR_COMMAND = "81010601{PAN_SPEED}{TILT_SPEED}{DIRECTION_X}{DIRECTION_Y}FF"
 ZOOM_COMMAND = "810104470{ZOOM[0]}0{ZOOM[1]}0{ZOOM[2]}0{ZOOM[3]}FF"
 ZOOM_INQ_COMMAND = "81090447FF"
 FOCUS_COMMAND = "810104480{FOCUS[0]}0{FOCUS[1]}0{FOCUS[2]}0{FOCUS[3]}FF"
 FOCUS_INQ_COMMAND = "81090448FF"
-FOCUS_TYPE_AUTO="2"
-FOCUS_TYPE_MANUAL="3"
-FOCUS_TYPE_COMMAND = "810104380{FOCUS_TYPE}FF"
-#Up 81 01 06 01 VV WW 03 01 FF
-#Down 81 01 06 01 VV WW 03 02 FF
-#Left 81 01 06 01 VV WW 01 03 FF
-#Right 81 01 06 01 VV WW 02 03 FF
-#UpLeft 81 01 06 01 VV WW 01 01 FF
-#UpRight 81 01 06 01 VV WW 02 01 FF
-#DownLeft 81 01 06 01 VV WW 01 02 FF
-#DownRight 81 01 06 01 VV WW 02 02 FF
-#Stop 81 01 06 01 VV WW 03 03 FF
-# RelativePosition 81 01 06 03 VV WW 0Y 0Y 0Y 0Y 0Z 0Z 0Z 0Z FF
-
-# Check pan tilt zoom for down goodnight position
-
-# Fx on transiton not on off, auto and hold
-# Find permanent show my mouse off option
-# Gerbing button
+FOCUS_TYPE_AUTO="02"
+FOCUS_TYPE_MANUAL="03"
+FOCUS_TYPE_COMMAND = "81010438{FOCUS_TYPE}FF"
 
 def launch_daemon(debug=False):
     command = "{} data_daemon.py".format(sys.executable)
@@ -57,8 +46,8 @@ def get_connection(ip):
     s.connect((ip, CAMERA_PORT))
     return s
 
-def send_pan_tilt_zoom_focus(data_server, camera, conn, preset):
-    pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
+def send_pan_tilt_zoom_focus(data_server, camera, conn, preset, pan_tilt_type=PAN_TILT_ABSOLUTE_TYPE):
+    pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_TILT_TYPE=pan_tilt_type, PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
     conn.send(pan_tilt_command)
     # print(conn.recv(1024).hex())
     zoom_command = bytes.fromhex(ZOOM_COMMAND.format(ZOOM=preset["zoom"]).upper())
@@ -81,6 +70,7 @@ def send_commands(data_server, args, camera):
         preset = data_server.get(camera, "goodnight")
         if preset:
             send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
+            time.sleep(10)
         else:
             print("Can't find that preset")
         data = bytes.fromhex(OFF_COMMAND)
@@ -94,6 +84,15 @@ def send_commands(data_server, args, camera):
             send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
         else:
             print("Can't find that preset")
+    if args.pan or args.tilt or args.zoom:
+        data = {
+            "zoom": args.zoom if args.zoom else "0000",
+            "pan": args.pan if args.pan else "0000",
+            "tilt": args.tilt if args.tilt else "0000",
+            "focus": "0000"
+        }
+        # TODO handle if data if input is bad
+        send_pan_tilt_zoom_focus(data_server, camera, conn, data, PAN_TILT_RELATIVE_TYPE)
     if args.query_zoom or args.query_all:
         conn.send(bytes.fromhex(ZOOM_INQ_COMMAND))
         response = conn.recv(1024).hex().upper()
@@ -127,20 +126,32 @@ def send_commands(data_server, args, camera):
     conn.close()
 
 def process_input(args):
+    # Set up daemon url
     data_server = xmlrpc.client.ServerProxy('http://127.0.0.1:8001')
+    # Launch daemon
     if args.launch_daemon:
         launch_daemon(args.debug)
     
-    # Run commands for main
+    threads = []
+    # Create Main camera thread
     if args.main_action:
         camera = "main"
-        send_commands(data_server, args, camera)
+        threads.append(Thread(target=send_commands, args=(data_server, args, camera))
 
-    # Run commands for alt
+    # Create Alt camera thread
     if args.alt_action:
         camera = "alt"
-        send_commands(data_server, args, camera)
+        threads.append(Thread(target=send_commands, args=(data_server, args, camera))
 
+    # Execute the threads
+    for thread in threads:
+        thread.start()
+
+    # Join the completed threads
+    for thread in threads:
+        thread.join()
+
+    # Shutdown daemon
     if args.stop_daemon or args.off:
         data_server.stop_daemon()
 
@@ -152,9 +163,9 @@ if __name__ == "__main__":
     parser.add_argument('--main', dest='main_action', action='store_true', default=False, help='Do these actions to the main camera')
     parser.add_argument('--alt', dest='alt_action', action='store_true', default=False, help='Do these actions to the alt camera')
     parser.add_argument('--preset', dest='preset', type=str, help='Move Camera to position --preset [value]')
-    #parser.add_argument('--pan', dest='pan', type=str, help='Set the pan --pan [value]')
-    #parser.add_argument('--tilt', dest='tilt', type=str, help='Set the tilt --tilt [value]')
-    #parser.add_argument('--zoom', dest='zoom', type=str, help='Set the zoom --zoom [value]')
+    parser.add_argument('--pan', dest='pan', type=str, help='Set the relative pan --pan [value]')
+    parser.add_argument('--tilt', dest='tilt', type=str, help='Set the relative tilt --tilt [value]')
+    parser.add_argument('--zoom', dest='zoom', type=str, help='Set the relative zoom --zoom [value]')
     parser.add_argument('--off', dest='off', action='store_true', default=False, help='Send off to camera')
     parser.add_argument('--on', dest='on', action='store_true', default=False, help='Send on to camera')
     parser.add_argument('--query_zoom', dest='query_zoom', action='store_true', default=False, help='Get the current zoom values')
@@ -166,5 +177,3 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     process_input(args)
-
-# ptz_cameras.py --main --alt --query_zoom --query_pan_tilt --query_focus"
