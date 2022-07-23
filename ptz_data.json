@@ -68,10 +68,10 @@
             "focus": "0677"
         },
         "current_pos": {
-            "zoom": "2DDB",
-            "pan": "FBBD",
-            "tilt": "FFCE",
-            "focus": "0207"
+            "zoom": "2DD8",
+            "pan": "FBDB",
+            "tilt": "FFDD",
+            "focus": "0209"
         }
     },
     "alt": {
@@ -143,10 +143,10 @@
             "focus": "0288"
         },
         "current_pos": {
-            "pan": "0000",
-            "tilt": "0000",
             "zoom": "0000",
-            "focus": "068D"
+            "pan": "0990",
+            "tilt": "FE50",
+            "focus": "0677"
         }
     }
 }

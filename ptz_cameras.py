@@ -136,12 +136,12 @@ def process_input(args):
     # Create Main camera thread
     if args.main_action:
         camera = "main"
-        threads.append(Thread(target=send_commands, args=(data_server, args, camera))
+        threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
 
     # Create Alt camera thread
     if args.alt_action:
         camera = "alt"
-        threads.append(Thread(target=send_commands, args=(data_server, args, camera))
+        threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
 
     # Execute the threads
     for thread in threads:
