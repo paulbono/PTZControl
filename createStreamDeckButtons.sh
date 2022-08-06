@@ -24,6 +24,7 @@ createImage "Cam 5 Altar Center" "MAC.png" "blue" &
 createImage "Cam 5 Altar PNP" "MACP.png" "blue" &
 createImage "Cam 5 Wide" "MW.png" "blue" &
 createImage "Cam 5 Baptism" "MB.png" "blue" &
+createImage "Cam 5 Soloist" "MS.png" "blue" &
 
 createImage "Cam 6 Worship Center" "AWC.png" "green" &
 createImage "Cam 6 Worship PNP" "AWCP.png" "green" &
