@@ -32,6 +32,7 @@ FOCUS_INQ_COMMAND = "81090448FF"
 FOCUS_TYPE_AUTO="02"
 FOCUS_TYPE_MANUAL="03"
 FOCUS_TYPE_COMMAND = "81010438{FOCUS_TYPE}FF"
+ONE_SECOND=1
 
 def launch_daemon(debug=False):
     command = "{} data_daemon.py".format(sys.executable)
@@ -44,19 +45,23 @@ def launch_daemon(debug=False):
 def get_connection(ip):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
     s.connect((ip, CAMERA_PORT))
+    s.settimeout(ONE_SECOND)
     return s
 
 def send_pan_tilt_zoom_focus(data_server, camera, conn, preset, pan_tilt_type=PAN_TILT_ABSOLUTE_TYPE):
     pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_TILT_TYPE=pan_tilt_type, PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
     conn.send(pan_tilt_command)
-    # print(conn.recv(1024).hex())
+    response = conn.recv(1024).hex()
+    print(response)
     zoom_command = bytes.fromhex(ZOOM_COMMAND.format(ZOOM=preset["zoom"]).upper())
     conn.send(zoom_command)
-    # print(conn.recv(1024).hex())
+    response = conn.recv(1024).hex()
+    print(response)
     focus_command = bytes.fromhex(FOCUS_COMMAND.format(FOCUS=preset["focus"]).upper())
     conn.send(focus_command)
-    # print(conn.recv(1024).hex())
-    data_server.set(camera, "current_pos", preset)
+    response = conn.recv(1024).hex()
+    print(response)
+    # data_server.set(camera, "current_pos", preset)
 
 def send_commands(data_server, args, camera):
     try:
@@ -64,17 +69,20 @@ def send_commands(data_server, args, camera):
     except:
         launch_daemon(args.debug)
         ip = data_server.get(camera, "ip")
+        print(data_server.ptz_data_size())
     conn = get_connection(ip)
     query_results = {}
     if args.off:
         preset = data_server.get(camera, "goodnight")
         if preset:
             send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
-            time.sleep(10)
+            # time.sleep(10)
         else:
             print("Can't find that preset")
         data = bytes.fromhex(OFF_COMMAND)
         conn.send(data)
+        response = conn.recv(1024).hex()
+        print(response)
     if args.on:
         data = bytes.fromhex(ON_COMMAND)
         conn.send(data)
@@ -132,6 +140,14 @@ def process_input(args):
     if args.launch_daemon:
         launch_daemon(args.debug)
     
+    # if args.main_action:
+    #     camera = "main"
+    #     send_commands(data_server, args, camera)
+
+    # if args.alt_action:
+    #     camera = "alt"
+    #     send_commands(data_server, args, camera)
+
     threads = []
     # Create Main camera thread
     if args.main_action:

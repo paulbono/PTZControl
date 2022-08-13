@@ -43,6 +43,10 @@ class ptz_data_handler():
                 def get(self, camera, key):
                     self.daemon_instance.reload_ptz_data()
                     return self.daemon_instance.ptz_data[camera][key]
+                    
+                def ptz_data_size(self):
+                    self.daemon_instance.reload_ptz_data()
+                    return len(self.ptz_data)
                 
                 def set(self, camera, key, value):
                     self.daemon_instance.reload_ptz_data()
