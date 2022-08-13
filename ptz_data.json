@@ -61,12 +61,6 @@
             "tilt": "FFD4",
             "focus": "0207"
         },
-        "soloist": {
-            "zoom": "3728",
-            "pan": "FF0B",
-            "tilt": "FFCA",
-            "focus": "0288"
-        },
         "goodnight": {
             "zoom": "0000",
             "pan": "0990",
@@ -135,6 +129,12 @@
             "tilt": "0000",
             "zoom": "0000",
             "focus": "068D"
+        },
+        "soloist": {
+            "zoom": "3728",
+            "pan": "FF0B",
+            "tilt": "FFCA",
+            "focus": "0288"
         },
         "goodnight": {
             "zoom": "0000",

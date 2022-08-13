@@ -51,16 +51,16 @@ def get_connection(ip):
 def send_pan_tilt_zoom_focus(data_server, camera, conn, preset, pan_tilt_type=PAN_TILT_ABSOLUTE_TYPE):
     pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_TILT_TYPE=pan_tilt_type, PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
     conn.send(pan_tilt_command)
-    response = conn.recv(1024).hex()
-    print(response)
+    #response = conn.recv(1024).hex()
+    #print(response)
     zoom_command = bytes.fromhex(ZOOM_COMMAND.format(ZOOM=preset["zoom"]).upper())
     conn.send(zoom_command)
-    response = conn.recv(1024).hex()
-    print(response)
+    #response = conn.recv(1024).hex()
+    #print(response)
     focus_command = bytes.fromhex(FOCUS_COMMAND.format(FOCUS=preset["focus"]).upper())
     conn.send(focus_command)
-    response = conn.recv(1024).hex()
-    print(response)
+    #response = conn.recv(1024).hex()
+    #print(response)
     # data_server.set(camera, "current_pos", preset)
 
 def send_commands(data_server, args, camera):
@@ -76,13 +76,13 @@ def send_commands(data_server, args, camera):
         preset = data_server.get(camera, "goodnight")
         if preset:
             send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
-            # time.sleep(10)
+            time.sleep(10)
         else:
             print("Can't find that preset")
         data = bytes.fromhex(OFF_COMMAND)
         conn.send(data)
-        response = conn.recv(1024).hex()
-        print(response)
+        # response = conn.recv(1024).hex()
+        # print(response)
     if args.on:
         data = bytes.fromhex(ON_COMMAND)
         conn.send(data)
@@ -140,32 +140,32 @@ def process_input(args):
     if args.launch_daemon:
         launch_daemon(args.debug)
     
-    # if args.main_action:
-    #     camera = "main"
-    #     send_commands(data_server, args, camera)
-
-    # if args.alt_action:
-    #     camera = "alt"
-    #     send_commands(data_server, args, camera)
-
-    threads = []
-    # Create Main camera thread
     if args.main_action:
         camera = "main"
-        threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
+        send_commands(data_server, args, camera)
 
-    # Create Alt camera thread
     if args.alt_action:
         camera = "alt"
-        threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
+        send_commands(data_server, args, camera)
 
-    # Execute the threads
-    for thread in threads:
-        thread.start()
+    # threads = []
+    # # Create Main camera thread
+    # if args.main_action:
+    #     camera = "main"
+    #     threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
 
-    # Join the completed threads
-    for thread in threads:
-        thread.join()
+    # # Create Alt camera thread
+    # if args.alt_action:
+    #     camera = "alt"
+    #     threads.append(Thread(target=send_commands, args=(data_server, args, camera)))
+
+    # # Execute the threads
+    # for thread in threads:
+    #     thread.start()
+
+    # # Join the completed threads
+    # for thread in threads:
+    #     thread.join()
 
     # Shutdown daemon
     if args.stop_daemon or args.off:
