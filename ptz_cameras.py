@@ -48,7 +48,7 @@ def get_connection(ip):
     s.settimeout(ONE_SECOND)
     return s
 
-def send_pan_tilt_zoom_focus(data_server, camera, conn, preset, pan_tilt_type=PAN_TILT_ABSOLUTE_TYPE):
+def send_pan_tilt_zoom_focus(dataj, camera, conn, preset, pan_tilt_type=PAN_TILT_ABSOLUTE_TYPE):
     pan_tilt_command = bytes.fromhex(PAN_TILT_COMMAND.format(PAN_TILT_TYPE=pan_tilt_type, PAN_SPEED=PAN_SPEED_MAX, TILT_SPEED=TILT_SPEED_MAX, PAN=preset["pan"], TILT=preset["tilt"]).upper())
     conn.send(pan_tilt_command)
     #response = conn.recv(1024).hex()
@@ -63,19 +63,20 @@ def send_pan_tilt_zoom_focus(data_server, camera, conn, preset, pan_tilt_type=PA
     #print(response)
     # data_server.set(camera, "current_pos", preset)
 
-def send_commands(data_server, args, camera):
-    try:
-        ip = data_server.get(camera, "ip")
-    except:
-        launch_daemon(args.debug)
-        ip = data_server.get(camera, "ip")
-        print(data_server.ptz_data_size())
+def send_commands(dataj, args, camera):
+    ip = dataj[camera]["ip"]
+    #try:
+    #    ip = data_server.get(camera, "ip")
+    #except:
+    #    launch_daemon(args.debug)
+    #    ip = data_server.get(camera, "ip")
+    #    print(data_server.ptz_data_size())
     conn = get_connection(ip)
     query_results = {}
     if args.off:
-        preset = data_server.get(camera, "goodnight")
+        preset = dataj[camera]["goodnight"]
         if preset:
-            send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
+            send_pan_tilt_zoom_focus(dataj, camera, conn, preset)
             time.sleep(10)
         else:
             print("Can't find that preset")
@@ -87,9 +88,9 @@ def send_commands(data_server, args, camera):
         data = bytes.fromhex(ON_COMMAND)
         conn.send(data)
     if args.preset:
-        preset = data_server.get(camera, args.preset)
+        preset = dataj[camera][args.preset]
         if preset:
-            send_pan_tilt_zoom_focus(data_server, camera, conn, preset)
+            send_pan_tilt_zoom_focus(dataj, camera, conn, preset)
         else:
             print("Can't find that preset")
     if args.pan or args.tilt or args.zoom:
@@ -129,24 +130,26 @@ def send_commands(data_server, args, camera):
             query_results["focus"] = focus_value
     if args.query_zoom or args.query_pan_tilt or args.query_focus or args.query_all:
         print(camera, json.dumps(query_results))
-        if args.log:
-            data_server.log(xmlrpc.client.dumps(({camera: query_results},)))
+        #if args.log:
+        #    data_server.log(xmlrpc.client.dumps(({camera: query_results},)))
     conn.close()
 
 def process_input(args):
     # Set up daemon url
-    data_server = xmlrpc.client.ServerProxy('http://127.0.0.1:8001')
+    #data_server = xmlrpc.client.ServerProxy('http://127.0.0.1:8001')
+    with open('ptz_data.json', 'r') as f:
+        data = json.loads(f.read())
     # Launch daemon
-    if args.launch_daemon:
-        launch_daemon(args.debug)
+    #if args.launch_daemon:
+    #    launch_daemon(args.debug)
     
     if args.main_action:
         camera = "main"
-        send_commands(data_server, args, camera)
+        send_commands(data, args, camera)
 
     if args.alt_action:
         camera = "alt"
-        send_commands(data_server, args, camera)
+        send_commands(data, args, camera)
 
     # threads = []
     # # Create Main camera thread
@@ -168,8 +171,8 @@ def process_input(args):
     #     thread.join()
 
     # Shutdown daemon
-    if args.stop_daemon or args.off:
-        data_server.stop_daemon()
+    #if args.stop_daemon or args.off:
+    #    data_server.stop_daemon()
 
 
 if __name__ == "__main__":
