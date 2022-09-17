@@ -2,11 +2,11 @@
     "main": {
         "ip": "10.0.0.132",
         "worship_center": {
-			"zoom": "2DD4", 
-			"pan": "FBAF",
-			"tilt": "FFC6", 
-			"focus": "0209"
-		},
+            "zoom": "2DD4", 
+            "pan": "FBAF",
+            "tilt": "FFC6", 
+            "focus": "0209"
+        },
         "worship_center_pnp": {
             "zoom": "2DDB",
             "pan": "FB88",
@@ -38,17 +38,17 @@
             "focus": "0208"
         },
         "altar_center": {
-			"zoom": "33CB",
-			"pan": "FBE3",
-			"tilt": "FFEA",
-			"focus": "01EA"
-			},
+            "zoom": "33CB",
+            "pan": "FBE3",
+            "tilt": "FFEA",
+            "focus": "01EA"
+            },
         "altar_center_pnp": {
-			"zoom": "33CB", 
-			"pan": "FBCB", 
-			"tilt": "FFEA", 
-			"focus": "01ED"
-		},
+            "zoom": "33CB", 
+            "pan": "FBCB", 
+            "tilt": "FFEA", 
+            "focus": "01ED"
+        },
         "wide": {
             "zoom": "0000",
             "pan": "FBE1",
@@ -83,11 +83,11 @@
             "focus": "023E"
         },
         "worship_center_pnp": {
-			"zoom": "32FF", 
-			"pan": "FFDE", 
-			"tilt": "FFB4",
-			"focus": "01ED"
-		},
+            "zoom": "32FF", 
+            "pan": "FFDE", 
+            "tilt": "FFB4",
+            "focus": "01ED"
+        },
         "pulpit_center": {
             "zoom": "362C",
             "pan": "00E2",
@@ -101,11 +101,11 @@
             "focus": "0247"
         },
         "sermon_center": {
-			"zoom": "32B0",
-			"pan": "0050",
-			"tilt": "FFC8",
-			"focus": "01E9"
-		},
+            "zoom": "32B0",
+            "pan": "0050",
+            "tilt": "FFC8",
+            "focus": "01E9"
+        },
         "sermon_center_pnp": {
             "zoom": "3579",
             "pan": "0030",
