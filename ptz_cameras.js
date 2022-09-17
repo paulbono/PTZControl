@@ -60,22 +60,32 @@ function sleep(ms) {
     });
 }
 
-function send_pan_tilt_zoom_focus(camera, socket, ip, preset, pan_tilt_type = PAN_TILT_ABSOLUTE_TYPE) {
+function send_command(socket, ip, command) {
+    return new Promise(function (resolve, reject) {
+        let command_hex = Buffer.from(command, 'hex');
+        socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
+        socket.on("message", data => {
+            resolve(data);
+        });
+    });
+}
+
+async function send_pan_tilt_zoom_focus(camera, socket, ip, preset, pan_tilt_type = PAN_TILT_ABSOLUTE_TYPE) {
     const pan_tilt_command = util.format(PAN_TILT_COMMAND, pan_tilt_type, PAN_SPEED_MAX, TILT_SPEED_MAX, preset.pan[0], preset.pan[1], preset.pan[2], preset.pan[3], preset.tilt[0], preset.tilt[1], preset.tilt[2], preset.tilt[3]).toUpperCase();
     const pan_tilt_command_hex = Buffer.from(pan_tilt_command, 'hex');
-    socket.send(pan_tilt_command_hex, 0, Buffer.byteLength(pan_tilt_command_hex), CAMERA_PORT, ip);
+    await send_command(socket, ip, pan_tilt_command);
     //response = conn.recv(1024).hex()
     //console.log(response)
 
     const zoom_command = util.format(ZOOM_COMMAND, preset.zoom[0], preset.zoom[1], preset.zoom[2], preset.zoom[3]).toUpperCase();
     const zoom_command_hex = Buffer.from(zoom_command, 'hex');
-    socket.send(zoom_command_hex, 0, Buffer.byteLength(zoom_command_hex), CAMERA_PORT, ip);
+    await send_command(socket, ip, zoom_command);
     //response = conn.recv(1024).hex()
     //console.log(response)
 
     const focus_command = util.format(FOCUS_COMMAND, preset.focus[0], preset.focus[1], preset.focus[2], preset.focus[3]).toUpperCase();
     const focus_command_hex = Buffer.from(focus_command, 'hex');
-    socket.send(focus_command_hex, 0, Buffer.byteLength(focus_command_hex), CAMERA_PORT, ip);
+    await send_command(socket, ip, focus_command);
     //response = conn.recv(1024).hex()
     //console.log(response)
 }
@@ -138,7 +148,6 @@ function query_focus(socket, ip) {
     });
 }
 
-
 async function send_commands(ptz_data, camera) {
     let ip = ptz_data[camera]["ip"];
     
@@ -147,19 +156,17 @@ async function send_commands(ptz_data, camera) {
         // Sends the off command for the camera
         let preset = ptz_data[camera]["goodnight"];
         if (preset !== undefined) {
-            send_pan_tilt_zoom_focus(camera, socket, ip, preset);
+            await send_pan_tilt_zoom_focus(camera, socket, ip, preset);
             await sleep(TEN_SECONDS_IN_MS);
         } else {
             console.log("Can't find that preset");
         }
-        let off_command_hex = Buffer.from(OFF_COMMAND, 'hex');
-        socket.send(off_command_hex, 0, Buffer.byteLength(off_command_hex), CAMERA_PORT, ip);
+        await send_command(socket, ip, OFF_COMMAND);
         //response = conn.recv(1024).hex()
         //console.log(response)
     } else if ("on" in args) {
         // Sends the on command for the camera
-        let on_command_hex = Buffer.from(ON_COMMAND, 'hex');
-        socket.send(on_command_hex, 0, Buffer.byteLength(on_command_hex), CAMERA_PORT, ip);
+        await send_command(socket, ip, ON_COMMAND);
     } else if ("preset" in args) {
         // Sends whatever preset data is available for the camera
         let preset = ptz_data[camera][args.preset];
