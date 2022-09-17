@@ -31,26 +31,26 @@ const TEN_SECONDS_IN_MS=10000;
 let server = require('dgram').createSocket('udp4');
 
 server.on('listening', () => {
-	const serverInfo = server.address();
-	console.log(`Server listening on ${serverInfo.address}:${serverInfo.port}`);
+    const serverInfo = server.address();
+    console.log(`Server listening on ${serverInfo.address}:${serverInfo.port}`);
 });
 
 server.on('message', (msg, rinfo) => {
-	console.log(msg);
+    console.log(msg);
     console.log(msg.toString('hex').toUpperCase());
     if ( msg.toString('hex').toUpperCase() == ZOOM_INQ_COMMAND ) {
-	    let response = Buffer.from("905001020304FF", 'hex');
-	    server.send(response, rinfo.port, rinfo.address);
+        let response = Buffer.from("905001020304FF", 'hex');
+        server.send(response, rinfo.port, rinfo.address);
     } else if ( msg.toString('hex').toUpperCase() == PAN_TILT_INQ_COMMAND ) {
-	    let response = Buffer.from("90500802030405060708FF", 'hex');
-	    server.send(response, rinfo.port, rinfo.address);
+        let response = Buffer.from("90500802030405060708FF", 'hex');
+        server.send(response, rinfo.port, rinfo.address);
     } else if ( msg.toString('hex').toUpperCase() == FOCUS_INQ_COMMAND ) {
-	    let response = Buffer.from("905009020304FF", 'hex');
-	    server.send(response, rinfo.port, rinfo.address);
+        let response = Buffer.from("905009020304FF", 'hex');
+        server.send(response, rinfo.port, rinfo.address);
     }
 });
 
 server.bind({
-	address: "127.0.0.1",
-	port: CAMERA_PORT
+    address: "127.0.0.1",
+    port: CAMERA_PORT
 });
