@@ -171,7 +171,7 @@ async function send_commands(ptz_data, camera) {
         // Sends whatever preset data is available for the camera
         let preset = ptz_data[camera][args.preset];
         if (preset !== undefined) {
-            send_pan_tilt_zoom_focus(camera, socket, ip, preset);
+            await send_pan_tilt_zoom_focus(camera, socket, ip, preset);
         } else {
             console.log("Can't find that preset");
         }
@@ -183,7 +183,7 @@ async function send_commands(ptz_data, camera) {
             "tilt": (tilt in args) ? args.tilt : "0000",
             "focus": "0000"
         };
-        send_pan_tilt_zoom_focus(camera, socket, ip, data, PAN_TILT_RELATIVE_TYPE);
+        await send_pan_tilt_zoom_focus(camera, socket, ip, data, PAN_TILT_RELATIVE_TYPE);
     }
 
     let query_results = {};
