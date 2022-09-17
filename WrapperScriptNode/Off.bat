@@ -1,2 +1,2 @@
 cd C:\Users\User\Desktop\PTZControl
-node .\ptz_cameras.js --main --alt --off
+"C:\Program Files\nodejs\node.exe" .\ptz_cameras.js --main --alt --off
