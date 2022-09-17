@@ -60,36 +60,36 @@ function sleep(ms) {
     });
 }
 
-function send_pan_tilt_zoom_focus(camera, socket, preset, pan_tilt_type = PAN_TILT_ABSOLUTE_TYPE) {
+function send_pan_tilt_zoom_focus(camera, socket, ip, preset, pan_tilt_type = PAN_TILT_ABSOLUTE_TYPE) {
     const pan_tilt_command = util.format(PAN_TILT_COMMAND, pan_tilt_type, PAN_SPEED_MAX, TILT_SPEED_MAX, preset.pan[0], preset.pan[1], preset.pan[2], preset.pan[3], preset.tilt[0], preset.tilt[1], preset.tilt[2], preset.tilt[3]).toUpperCase();
     const pan_tilt_command_hex = Buffer.from(pan_tilt_command, 'hex');
-    socket.write(pan_tilt_command_hex);
+	socket.send(pan_tilt_command_hex, 0, Buffer.byteLength(pan_tilt_command_hex), CAMERA_PORT, ip);
     //response = conn.recv(1024).hex()
     //console.log(response)
 
     const zoom_command = util.format(ZOOM_COMMAND, preset.zoom[0], preset.zoom[1], preset.zoom[2], preset.zoom[3]).toUpperCase();
     const zoom_command_hex = Buffer.from(zoom_command, 'hex');
-    socket.write(zoom_command_hex);
+	socket.send(zoom_command_hex, 0, Buffer.byteLength(zoom_command_hex), CAMERA_PORT, ip);
     //response = conn.recv(1024).hex()
     //console.log(response)
 
     const focus_command = util.format(FOCUS_COMMAND, preset.focus[0], preset.focus[1], preset.focus[2], preset.focus[3]).toUpperCase();
     const focus_command_hex = Buffer.from(focus_command, 'hex');
-    socket.write(focus_command_hex);
+	socket.send(focus_command_hex, 0, Buffer.byteLength(focus_command_hex), CAMERA_PORT, ip);
     //response = conn.recv(1024).hex()
     //console.log(response)
 }
 
-function query_zoom(socket) {
+function query_zoom(socket, ip) {
     return new Promise(function (resolve, reject) {
         let zoom_inq_command_hex = Buffer.from(ZOOM_INQ_COMMAND, 'hex');
-        socket.write(zoom_inq_command_hex);
-        socket.on("data", data => {
+		socket.send(zoom_inq_command_hex, 0, Buffer.byteLength(zoom_inq_command_hex), CAMERA_PORT, ip);
+        socket.on("message", data => {
             const response = data.toString('hex').toUpperCase();
             const regExZoomQuery = /90500(?<p>.)0(?<q>.)0(?<r>.)0(?<s>.)FF/mg;
             for (const match of response.matchAll(regExZoomQuery)) {
                 if (match.groups !== undefined) {
-                    let zoom_value = `${match.groups.p}${match.groups.q}${match.groups.r}${match.groups.s}`
+                    let zoom_value = `${match.groups.p}${match.groups.q}${match.groups.r}${match.groups.s}`;
                     resolve(zoom_value);
                 } else {
                     reject("No Matches");
@@ -99,17 +99,17 @@ function query_zoom(socket) {
     });
 }
 
-function query_pan_tilt(socket) {
+function query_pan_tilt(socket, ip) {
     return new Promise(function (resolve, reject) {
         let pan_tilt_inq_command_hex = Buffer.from(PAN_TILT_INQ_COMMAND, 'hex');
-        socket.write(pan_tilt_inq_command_hex);
-        socket.on("data", data => {
+		socket.send(pan_tilt_inq_command_hex, 0, Buffer.byteLength(pan_tilt_inq_command_hex), CAMERA_PORT, ip);
+        socket.on("message", data => {
             const response = data.toString('hex').toUpperCase();
             const regExPanTiltQuery = /90500(?<w0>.)0(?<w1>.)0(?<w2>.)0(?<w3>.)0(?<z0>.)0(?<z1>.)0(?<z2>.)0(?<z3>.)FF/mg;
             for (const match of response.matchAll(regExPanTiltQuery)) {
                 if (match.groups !== undefined) {
-                    let pan_value = `${match.groups.w0}${match.groups.w1}${match.groups.w2}${match.groups.w3}`
-                    let tilt_value = `${match.groups.z0}${match.groups.z1}${match.groups.z2}${match.groups.z3}`
+                    let pan_value = `${match.groups.w0}${match.groups.w1}${match.groups.w2}${match.groups.w3}`;
+                    let tilt_value = `${match.groups.z0}${match.groups.z1}${match.groups.z2}${match.groups.z3}`;
                     resolve([pan_value, tilt_value]);
                 } else {
                     reject("No Matches");
@@ -119,16 +119,16 @@ function query_pan_tilt(socket) {
     });
 }
 
-function query_focus(socket) {
+function query_focus(socket, ip) {
     return new Promise(function (resolve, reject) {
         let focus_inq_command_hex = Buffer.from(FOCUS_INQ_COMMAND, 'hex');
-        socket.write(focus_inq_command_hex);
-        socket.on("data", data => {
+		socket.send(focus_inq_command_hex, 0, Buffer.byteLength(focus_inq_command_hex), CAMERA_PORT, ip);
+        socket.on("message", data => {
             const response = data.toString('hex').toUpperCase();
             const regExFocusQuery = /90500(?<p>.)0(?<q>.)0(?<r>.)0(?<s>.)FF/mg;
             for (const match of response.matchAll(regExFocusQuery)) {
                 if (match.groups !== undefined) {
-                    let focus_value = `${match.groups.p}${match.groups.q}${match.groups.r}${match.groups.s}`
+                    let focus_value = `${match.groups.p}${match.groups.q}${match.groups.r}${match.groups.s}`;
                     resolve(focus_value);
                 } else {
                     reject("No Matches");
@@ -139,62 +139,60 @@ function query_focus(socket) {
 }
 
 
-function send_commands(ptz_data, camera) {
+async function send_commands(ptz_data, camera) {
     let ip = ptz_data[camera]["ip"];
-    let socket = new net.Socket();
-    socket.connect(CAMERA_PORT, ip, async () => {
-        socket.setNoDelay(true);
-        if ("off" in args) {
-            // Sends the off command for the camera
-            let preset = ptz_data[camera]["goodnight"];
-            if (preset !== undefined) {
-                send_pan_tilt_zoom_focus(camera, socket, preset);
-                await sleep(TEN_SECONDS_IN_MS);
-            } else {
-                console.log("Can't find that preset");
-            }
-            let off_command_hex = Buffer.from(OFF_COMMAND, 'hex');
-            socket.write(off_command_hex);
-            //response = conn.recv(1024).hex()
-            //console.log(response)
-        } else if ("on" in args) {
-            // Sends the on command for the camera
-            let on_command_hex = Buffer.from(ON_COMMAND, 'hex');
-            socket.write(on_command_hex);
-        } else if ("preset" in args) {
-            // Sends whatever preset data is available for the camera
-            let preset = ptz_data[camera][args.preset];
-            if (preset !== undefined) {
-                send_pan_tilt_zoom_focus(camera, socket, preset);
-            } else {
-                console.log("Can't find that preset");
-            }
-        } else if ("pan" in args || "tilt" in args || "zoom" in args) {
-            // Sends a relative pan tilt zoom to the camera
-            let data = {
-                "zoom": (zoom in args) ? args.zoom : "0000",
-                "pan": (pan in args) ? args.pan : "0000",
-                "tilt": (tilt in args) ? args.tilt : "0000",
-                "focus": "0000"
-            };
-            send_pan_tilt_zoom_focus(camera, socket, data, PAN_TILT_RELATIVE_TYPE);
-        }
+	
+    let socket = require('dgram').createSocket('udp4');
+	if ("off" in args) {
+		// Sends the off command for the camera
+		let preset = ptz_data[camera]["goodnight"];
+		if (preset !== undefined) {
+			send_pan_tilt_zoom_focus(camera, socket, ip, preset);
+			await sleep(TEN_SECONDS_IN_MS);
+		} else {
+			console.log("Can't find that preset");
+		}
+		let off_command_hex = Buffer.from(OFF_COMMAND, 'hex');
+		socket.send(off_command_hex, 0, Buffer.byteLength(off_command_hex), CAMERA_PORT, ip);
+		//response = conn.recv(1024).hex()
+		//console.log(response)
+	} else if ("on" in args) {
+		// Sends the on command for the camera
+		let on_command_hex = Buffer.from(ON_COMMAND, 'hex');
+		socket.send(on_command_hex, 0, Buffer.byteLength(on_command_hex), CAMERA_PORT, ip);
+	} else if ("preset" in args) {
+		// Sends whatever preset data is available for the camera
+		let preset = ptz_data[camera][args.preset];
+		if (preset !== undefined) {
+			send_pan_tilt_zoom_focus(camera, socket, ip, preset);
+		} else {
+			console.log("Can't find that preset");
+		}
+	} else if ("pan" in args || "tilt" in args || "zoom" in args) {
+		// Sends a relative pan tilt zoom to the camera
+		let data = {
+			"zoom": (zoom in args) ? args.zoom : "0000",
+			"pan": (pan in args) ? args.pan : "0000",
+			"tilt": (tilt in args) ? args.tilt : "0000",
+			"focus": "0000"
+		};
+		send_pan_tilt_zoom_focus(camera, socket, ip, data, PAN_TILT_RELATIVE_TYPE);
+	}
 
-        let query_results = {};
-        if ("query_zoom" in args || "query_all" in args) {
-            query_results["zoom"] = await query_zoom(socket);
-        }
-        if ("query_pan_tilt" in args || "query_all" in args) {
-            [query_results["pan"], query_results["tilt"]] = await query_pan_tilt(socket);
-        }
-        if ("query_focus" in args || "query_all" in args) {
-            query_results["focus"] = await query_focus(socket);
-        }
-        if ("query_zoom" in args || "query_pan_tilt" in args || "query_focus" in args || "query_all" in args) {
-            console.log(camera, query_results)
-        }
-        socket.end();
-    })
+	let query_results = {};
+	if ("query_zoom" in args || "query_all" in args) {
+		query_results["zoom"] = await query_zoom(socket, ip);
+	}
+	if ("query_pan_tilt" in args || "query_all" in args) {
+		[query_results["pan"], query_results["tilt"]] = await query_pan_tilt(socket, ip);
+	}
+	if ("query_focus" in args || "query_all" in args) {
+		query_results["focus"] = await query_focus(socket, ip);
+	}
+	if ("query_zoom" in args || "query_pan_tilt" in args || "query_focus" in args || "query_all" in args) {
+		console.log(camera, query_results);
+	}
+	socket.close();
 }
 
 let ptzRawData = fs.readFileSync('ptz_data.json');
