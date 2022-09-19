@@ -60,13 +60,11 @@ function sleep(ms) {
     });
 }
 
-function send_command(socket, ip, command) {
-    return new Promise(function (resolve, reject) {
-        let command_hex = Buffer.from(command, 'hex');
-        socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
-        socket.on("message", data => {
-            resolve(data);
-        });
+async function send_command(socket, ip, command) {
+    let command_hex = Buffer.from(command, 'hex');
+    await socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
+    socket.on("message", data => {
+        //console.log(data);
     });
 }
 
@@ -74,20 +72,14 @@ async function send_pan_tilt_zoom_focus(camera, socket, ip, preset, pan_tilt_typ
     const pan_tilt_command = util.format(PAN_TILT_COMMAND, pan_tilt_type, PAN_SPEED_MAX, TILT_SPEED_MAX, preset.pan[0], preset.pan[1], preset.pan[2], preset.pan[3], preset.tilt[0], preset.tilt[1], preset.tilt[2], preset.tilt[3]).toUpperCase();
     const pan_tilt_command_hex = Buffer.from(pan_tilt_command, 'hex');
     await send_command(socket, ip, pan_tilt_command);
-    //response = conn.recv(1024).hex()
-    //console.log(response)
 
     const zoom_command = util.format(ZOOM_COMMAND, preset.zoom[0], preset.zoom[1], preset.zoom[2], preset.zoom[3]).toUpperCase();
     const zoom_command_hex = Buffer.from(zoom_command, 'hex');
     await send_command(socket, ip, zoom_command);
-    //response = conn.recv(1024).hex()
-    //console.log(response)
 
     const focus_command = util.format(FOCUS_COMMAND, preset.focus[0], preset.focus[1], preset.focus[2], preset.focus[3]).toUpperCase();
     const focus_command_hex = Buffer.from(focus_command, 'hex');
     await send_command(socket, ip, focus_command);
-    //response = conn.recv(1024).hex()
-    //console.log(response)
 }
 
 function query_zoom(socket, ip) {
@@ -162,8 +154,6 @@ async function send_commands(ptz_data, camera) {
             console.log("Can't find that preset");
         }
         await send_command(socket, ip, OFF_COMMAND);
-        //response = conn.recv(1024).hex()
-        //console.log(response)
     } else if ("on" in args) {
         // Sends the on command for the camera
         await send_command(socket, ip, ON_COMMAND);
