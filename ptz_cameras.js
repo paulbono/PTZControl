@@ -60,13 +60,16 @@ function sleep(ms) {
     });
 }
 
-async function send_command(socket, ip, command) {
-    let command_hex = Buffer.from(command, 'hex');
-    await socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
-    await socket.on("message", data => {
-        //console.log(data);
+function send_command(socket, ip, command) {
+    return new Promise(function (resolve, reject) {
+        let command_hex = Buffer.from(command, 'hex');
+        socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
+        socket.on("message", data => {
+            resolve(data);
+        });
     });
 }
+
 
 async function send_pan_tilt_zoom_focus(camera, socket, ip, preset, pan_tilt_type = PAN_TILT_ABSOLUTE_TYPE) {
     const pan_tilt_command = util.format(PAN_TILT_COMMAND, pan_tilt_type, PAN_SPEED_MAX, TILT_SPEED_MAX, preset.pan[0], preset.pan[1], preset.pan[2], preset.pan[3], preset.tilt[0], preset.tilt[1], preset.tilt[2], preset.tilt[3]).toUpperCase();
