@@ -39,7 +39,10 @@ Job Steps
     > Camera 5, Sermon PNP
     > Slides PNP
 16.[TODO] Sermon Theme (Slides PC)
-    > Camera 6, Sermon Center
+    > 0:00 Camera 6, Sermon Center
+    > 05:00 Img 9 Camera 5, Sermon Center
+    > 10:00 Img 9 Camera 5, Sermon Center
+    > 15:00 Img 9 Camera 5, Sermon Center
 17.[TODO] Creed (Slides PC)
     > Camera 5, Pulpit PNP
 18.[TODO] Prayer (Slides PC)
@@ -75,3 +78,7 @@ Job Steps
     > 0:00 Img 13 "Thank you for worship"
     > 0:15 "Copywrite"
     > 0:30 Stop Stream
+
+Stories
+ * Listen to incoming messages
+ * 

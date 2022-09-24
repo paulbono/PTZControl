@@ -32,8 +32,8 @@ Sub PublishTag(tag As String)
     
     Dim textJSON As String
     
-    textJSON = "{""id"": 60,""category"": {""id"": 1,""name"": """ & tag & """},""name"": ""yolt"",""photoUrls"": [""https://en.wikipedia.org/wiki/Puppy#/media/File:Golde33443.jpg""],""tags"": [{""id"": 0,""name"": ""string""}],""status"": ""available""}"
-    URLPath = "https://petstore.swagger.io/v2/pet"
+    textJSON = "{""tag"": " & tag &"} ""}"
+    URLPath = "W10-D-24.celc.christpewaukee.org:3000/slid"
     
     Set myMSXML = CreateObject("Microsoft.XmlHttp")
     myMSXML.Open "POST", URLPath, False
@@ -41,7 +41,7 @@ Sub PublishTag(tag As String)
     myMSXML.setRequestHeader "User-Agent", "Firefox 3.6.4"
     myMSXML.send textJSON
     'Call Log("info", "Publish", 0, myMSXML.responseText)
-    Debug.Print myMSXML.responseText
+    'Debug.Print myMSXML.responseText
     
     On Error GoTo 0
     Exit Sub
