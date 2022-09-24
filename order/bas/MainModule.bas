@@ -32,8 +32,8 @@ Sub PublishTag(tag As String)
     
     Dim textJSON As String
     
-    textJSON = "{""tag"": " & tag &"} ""}"
-    URLPath = "W10-D-24.celc.christpewaukee.org:3000/slid"
+    textJSON = "{""tag"": """ & tag & """}"
+    URLPath = "http://W10-D-24.celc.christpewaukee.org:3000/slid"
     
     Set myMSXML = CreateObject("Microsoft.XmlHttp")
     myMSXML.Open "POST", URLPath, False
