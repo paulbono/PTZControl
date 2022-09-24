@@ -1,0 +1,7 @@
+Job Steps
+
+1. Login (Task Scheduler) 4:00PM
+2. Init (Task Scheduler) 4:15PM
+    > Start all the stream stuff
+    > Prep cameras such that 60seconds in on 'Program'
+3. 

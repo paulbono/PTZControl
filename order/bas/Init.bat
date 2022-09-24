@@ -7,6 +7,7 @@ timeout 15
 REM Blocks Streaming.ahk
 start "I'm Running..." "C:\Program Files (x86)\Livestream Studio Launcher\Livestream Studio.exe"
 REM Blocks WrapperScript\On.bat and Desktop\query.bat
+timeout 5
 start "I'm Running..." "C:\Program Files\Companion\Companion.exe"
 
 timeout 15
