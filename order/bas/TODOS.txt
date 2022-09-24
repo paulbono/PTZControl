@@ -1,7 +1,77 @@
 Job Steps
 
-1. Login (Task Scheduler) 4:00PM
-2. Init (Task Scheduler) 4:15PM
+1. [TODO] Login (Task Scheduler) 4:00PM
+2. [DONE] Init (Task Scheduler) 4:15PM
     > Start all the stream stuff
     > Prep cameras such that 60seconds in on 'Program'
-3. 
+3. [TODO] Start Stream (Task Scheduler) 4:59PM 
+    > Img 17 "1_00"
+4. [TODO] 4:59:20PM 
+    > Img 18 "40"
+5. [TODO] 4:59:40PM 
+    > Img 19 "20"
+6. [TODO] 5:00:00PM (Task Scheduler)
+    > Camera 6, Wide
+    > Img 2 "A Welcome"
+7. [TODO] 5:01:00PM (Task Scheduler)
+    > Camera 5, Worship Center
+    > Img 2 "A Welcome"
+8. [TODO] 5:01:15PM (Task Scheduler)
+    > Camera 5, Worship Center
+    > Img 3 "App"
+9. [TODO] 5:01:30PM (Task Scheduler)
+    > Camera 5, Worship Center
+    > Img 4 "SVC"
+10.[TODO] 5:01:45PM (Task Scheduler)
+    > Camera 5, Worship Center
+    > Img 11 "Online Offering"
+11.[TODO] Worship HYMN (Slides PC)
+    > Camera 7
+12.[TODO] Call to Worship (Slides PC)
+    > Camera 5, Worship PNP
+    > Slides PNP
+13.[TODO] Old Testament (Slides PC)
+    > Camera 5, Pulpit PNP
+    > Slides PNP
+14.[TODO] Sermon Hymn (Slides PC)
+    > Camera 7
+15.[TODO] Sermon Text (Slides PC)
+    > Camera 5, Sermon PNP
+    > Slides PNP
+16.[TODO] Sermon Theme (Slides PC)
+    > Camera 6, Sermon Center
+17.[TODO] Creed (Slides PC)
+    > Camera 5, Pulpit PNP
+18.[TODO] Prayer (Slides PC)
+    > Camera 6, Alter Center
+19.[TODO] Lord's Prayer (Slides PC)
+    > Camera 7
+20.[TODO] Institution (Slides PC)
+    > Camera 5, Alter Center
+21.[TODO] Distrobution (Slides PC - Time Delayed)
+    > Camera 6, Wide
+    > 0:00 Img 9 "Christ L"
+    > 0:15 Img 10 "Private Communion"
+    > 0:30 Img 11 "Online Offering"
+    > 0:45 Img 12 "Contact Us"
+    > 1:00 Img 9 "Christ L"
+    > 1:15 Img 10 "Private Communion"
+    > 1:30 Img 11 "Online Offering"
+    > 1:45 Img 12 "Contact Us"
+    > 2:00 Img 9 "Christ L"
+22.[TODO] End of Distrobution (Slides PC)
+    > Camera 5, Alter PNP
+    > Slides PNP
+23.[TODO] Closing HYMN (Slides PC)
+    > Camera 7
+24.[TODO] Silent Prayer (Slides PC)
+    > Camera 6, Wide
+25.[TODO] Announcements (Slides PC)
+    > Camera 5, Worship Center
+26.[TODO] Announcement Video (Slides PC)
+    > Camera 7
+27.[TODO] thank you for worshiping (Slides PC - Time Delayed)
+    > Camera 6, Wide
+    > 0:00 Img 13 "Thank you for worship"
+    > 0:15 "Copywrite"
+    > 0:30 Stop Stream

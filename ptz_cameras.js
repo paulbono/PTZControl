@@ -63,7 +63,7 @@ function sleep(ms) {
 async function send_command(socket, ip, command) {
     let command_hex = Buffer.from(command, 'hex');
     await socket.send(command_hex, 0, Buffer.byteLength(command_hex), CAMERA_PORT, ip);
-    socket.on("message", data => {
+    await socket.on("message", data => {
         //console.log(data);
     });
 }
