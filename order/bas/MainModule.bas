@@ -9,14 +9,12 @@ Sub OnSlideShowPageChange()
     Dim notes As String
     Dim subjectString As String
     i = ActivePresentation.SlideShowWindow.View.CurrentShowPosition
-    subjectString = ActivePresentation.Slides(slideId).NotesPage.Shapes(2).TextFrame.TextRange.text
-
-    'Call Log("info", "OnSlideShowPageChange", 0, "test " & i)
+    subjectString = ActivePresentation.Slides(i).NotesPage.Shapes(2).TextFrame.TextRange.text
 
     notes = GetTransitionTag(subjectString)
     
     If notes <> "" Then
-        Proc2 notes
+        Call PublishTag(notes)
     End If
     
     On Error GoTo 0
@@ -25,18 +23,24 @@ ErrHandler:
     Call LogError("OnSlideShowPageChange", Err, Error$) ' passes name of current routine '
 End Sub
 
-Sub Proc2(text As String)
-    MsgBox text
+Sub PublishTag(tag As String)
+    On Error GoTo ErrHandler
+    Call Log("info", "PublishTag", 0, tag)
     'Debug.Print "Hello " & text
+    On Error GoTo 0
+    Exit Sub
+ErrHandler:
+    Call LogError("PublishTag", Err, Error$) ' passes name of current routine '
 End Sub
 
 'Had to go to Tools > References and found `Microsoft VBScript Regular Expressions 5.5`
 Function GetTransitionTag(subjectString As String) As String
+    On Error GoTo ErrHandler
     Dim myRegExp As RegExp
     Dim myMatches As MatchCollection
     Dim myMatch As Match
 
-    Call Log("info", "GetTransitionTag", 1, subjectString)
+    'Call Log("info", "GetTransitionTag", 1, subjectString)
 
     Set myRegExp = New RegExp
     myRegExp.IgnoreCase = True
@@ -50,34 +54,12 @@ Function GetTransitionTag(subjectString As String) As String
         GetTransitionTag = myMatches.Item(0)
     End If
     
+    On Error GoTo 0
+    Exit Function
+ErrHandler:
+    Call LogError("GetTransitionTag", Err, Error$) ' passes name of current routine '
     
 End Function
 
 
-' General routine for logging errors '
-Sub LogError(ProcName$, ErrNum&, ErrorMsg$)
-    Call Log("Error", ProcName, ErrNum, ErrorMsg)
-End Sub
-
-Sub Log(Level$, ProcName$, ErrNum&, ErrorMsg$)
-  On Error GoTo ErrHandler
-  Dim nUnit As Integer
-  nUnit = FreeFile
-  ' This assumes write access to the directory containing the program '
-  ' You will need to choose another directory if this is not possible '
-  
-  Open "C:\Temp\" & "Powerpoint_" & ActivePresentation.Name & ".log" For Append As nUnit
-  Print #nUnit, "Error in " & ProcName
-  Print #nUnit, "  " & ErrNum & ", " & ErrorMsg
-  Print #nUnit, "  " & Format$(Now)
-  Print #nUnit, "  "
-  Close nUnit
-  Exit Sub
-
-ErrHandler:
-  'Failed to write log for some reason.'
-  'Show MsgBox so error does not go unreported '
-  MsgBox "Error in " & ProcName & vbNewLine & _
-    ErrNum & ", " & ErrorMsg
-End Sub
 
