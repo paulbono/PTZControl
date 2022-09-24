@@ -15,5 +15,6 @@ Sub testGetTransitionTag()
     'Assert
     Debug.Assert testResult = "[words]"
     
-    Debug.Assert "Test" = "Passed!"
+    'If you got to this line, the test passed!
+    Debug.Print "testGetTransitionTag: Passed."
 End Sub
