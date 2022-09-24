@@ -6,15 +6,15 @@ Sub OnSlideShowPageChange()
     On Error GoTo ErrHandler
     
     Dim i As Integer
-    Dim notes As String
+    Dim tag As String
     Dim subjectString As String
+    
     i = ActivePresentation.SlideShowWindow.View.CurrentShowPosition
     subjectString = ActivePresentation.Slides(i).NotesPage.Shapes(2).TextFrame.TextRange.text
-
-    notes = GetTransitionTag(subjectString)
+    tag = GetTransitionTag(subjectString)
     
-    If notes <> "" Then
-        Call PublishTag(notes)
+    If tag <> "" Then
+        Call PublishTag(tag)
     End If
     
     On Error GoTo 0
@@ -24,9 +24,25 @@ ErrHandler:
 End Sub
 
 Sub PublishTag(tag As String)
+    Dim myMSXML As Variant
+    Dim URLPath As String
+    
     On Error GoTo ErrHandler
-    Call Log("info", "PublishTag", 0, tag)
-    'Debug.Print "Hello " & text
+    'Call Log("info", "PublishTag", 0, tag)
+    
+    Dim textJSON As String
+    
+    textJSON = "{""id"": 60,""category"": {""id"": 1,""name"": """ & tag & """},""name"": ""yolt"",""photoUrls"": [""https://en.wikipedia.org/wiki/Puppy#/media/File:Golde33443.jpg""],""tags"": [{""id"": 0,""name"": ""string""}],""status"": ""available""}"
+    URLPath = "https://petstore.swagger.io/v2/pet"
+    
+    Set myMSXML = CreateObject("Microsoft.XmlHttp")
+    myMSXML.Open "POST", URLPath, False
+    myMSXML.setRequestHeader "Content-Type", "application/json"
+    myMSXML.setRequestHeader "User-Agent", "Firefox 3.6.4"
+    myMSXML.send textJSON
+    'Call Log("info", "Publish", 0, myMSXML.responseText)
+    Debug.Print myMSXML.responseText
+    
     On Error GoTo 0
     Exit Sub
 ErrHandler:
