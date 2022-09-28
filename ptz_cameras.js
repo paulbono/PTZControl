@@ -123,6 +123,9 @@ function query_focus(socket, ip) {
 }
 
 async function send_commands(ptz_data, args, camera) {
+    console.log("ptz_data ", ptz_data);
+    console.log("args ", args);
+    console.log("camera ", camera);
     let ip = ptz_data[camera]["ip"];
     
     let socket = require('dgram').createSocket('udp4');

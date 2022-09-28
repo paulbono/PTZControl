@@ -25,11 +25,22 @@ function pressBitCompanionButton(page, button) {
 	});
 }
 
+const ONE_SECOND_IN_MS = 1000;
+const TEN_SECONDS_IN_MS = 10000;
+const FIFTEEN_SECONDS_IN_MS = 15000;
+const FIVE_MINUTES_IN_MS = 300000;
+
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
 
 let setSessionTags = [];
 
 // Assuming tag will always exist in post data
-app.post('/slide', (req, res) => {
+app.post('/slide', async function (req, res) {
 	console.log(req.body);
 	//res.json(req.body);
 
@@ -54,7 +65,7 @@ app.post('/slide', (req, res) => {
 			break;
 		case "[Call To Worship]":
 			// Point Camera 5
-			await camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+			camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
 
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
@@ -105,7 +116,8 @@ app.post('/slide', (req, res) => {
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 
-			// TODO Wait 5 minutes
+			// Wait 5 minutes
+			await sleep(FIVE_MINUTES_IN_MS);
 
 			// Point Camera 5
 			camera.send_commands(ptzData, {"preset": "sermon_center"}, "main");
@@ -114,7 +126,8 @@ app.post('/slide', (req, res) => {
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 
-			// TODO Wait 5 minutes
+			// Wait 5 minutes
+			await sleep(FIVE_MINUTES_IN_MS);
 
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "sermon_center"}, "alt");
@@ -211,16 +224,19 @@ app.post('/slide', (req, res) => {
 			await pressBitCompanionButton(1, 2);
 			break
 		case "[Thank You For Worshiping]":
-			// TODO Wait 10 Seconds
+			// Wait 10 Seconds
+			await sleep(TEN_SECONDS_IN_MS);
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "wide"}, "alt");
 			// Camera 6
 			await pressBitCompanionButton(1, 4);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			// TODO Wait 15 Seconds
+			// Wait 15 Seconds
+			await sleep(FIFTEEN_SECONDS_IN_MS);
 			// TODO Copyright
-			// TODO Wait 15 Seconds
+			// Wait 15 Seconds
+			await sleep(FIFTEEN_SECONDS_IN_MS);
 			// TODO Stop Stream
 			break;
 		default:
