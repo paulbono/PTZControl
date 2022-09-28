@@ -58,11 +58,10 @@ app.post('/slide', async function (req, res) {
 	{
 		case "[Worship Hymn]":
 			// Camera 7
-			//await pressBitCompanionButton(1, 5);
+			await pressBitCompanionButton(1, 5);
 
 			// Press Auto
-			//await pressBitCompanionButton(1, 2);
-			camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+			await pressBitCompanionButton(1, 2);
 			break;
 		case "[Call To Worship]":
 			// Point Camera 5
