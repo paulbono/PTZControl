@@ -47,7 +47,7 @@ app.post('/slide', async function (req, res) {
 	// Doing this so we don't trigger the same tag twice in a given "service" since there is state involved here
 	if (req.body.tag == "[Start]") {
 		setSessionTags = [];
-	} else if (req.body.tag in setSessionTags) {
+	} else if (setSessionTags.includes(req.body.tag)) {
 		res.send('');
 		return;
 	} else {
@@ -58,10 +58,11 @@ app.post('/slide', async function (req, res) {
 	{
 		case "[Worship Hymn]":
 			// Camera 7
-			await pressBitCompanionButton(1, 5);
+			//await pressBitCompanionButton(1, 5);
 
 			// Press Auto
-			await pressBitCompanionButton(1, 2);
+			//await pressBitCompanionButton(1, 2);
+			camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
 			break;
 		case "[Call To Worship]":
 			// Point Camera 5
