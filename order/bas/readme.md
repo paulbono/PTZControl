@@ -16,3 +16,25 @@ From there, rightclick on 'VBAProject' in the project window and 'Import File'
 ## Testing
 Open TestHarness.bas
 click 'Run Sub/User Form" and all break points should land on "Test Passed"
+
+## Powerpoint Tags
+
+Slide listener will listen for these tags and behave approprately.
+
+* [Worship Hymn]
+* [Call To Worship]
+* [Old Testment]
+* [Sermon Hymn]
+* [Sermon Text]
+* [Sermon Theme]
+* [Creed]
+* [Prayer]
+* [Lords Prayer]
+* [Institution]
+* [Distribution]
+* [End of Distribution]
+* [Closing Hymn]
+* [Silent prayer]
+* [Announcements]
+* [After Service Video]
+* [Thank You For Worshiping]

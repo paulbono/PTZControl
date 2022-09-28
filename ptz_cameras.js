@@ -4,27 +4,6 @@ const net = require('net');
 const util = require('util');
 // Needed to read a file
 const fs = require('fs');
-// Obtain the arguments and pass to minimist to put the args in a map
-// npm install minimist
-const args = require('minimist')(process.argv);
-
-// Help then exit 
-if ("help" in args) {
-    console.log('\nnode ptz_cameras.js [commands]\n');
-    console.log('\t--main', 'Do these actions to the main camera');
-    console.log('\t--alt', 'Do these actions to the alt camera');
-    console.log('\t--preset', 'Move Camera to position --preset [value]');
-    console.log('\t--pan', 'Set the relative pan --pan [value]');
-    console.log('\t--tilt', 'Set the relative tilt --tilt [value]');
-    console.log('\t--zoom', 'Set the relative zoom --zoom [value]');
-    console.log('\t--off', 'Send off to camera');
-    console.log('\t--on', 'Send on to camera');
-    console.log('\t--query_zoom', 'Get the current zoom values');
-    console.log('\t--query_pan_tilt', 'Get the current pan and tilt values');
-    console.log('\t--query_focus', 'Get the current focus values');
-    console.log('\t--query_all', 'Run all Queries');
-    process.exit(0);
-}
 
 // Define constants
 const CAMERA_PORT = 1259;
@@ -143,7 +122,7 @@ function query_focus(socket, ip) {
     });
 }
 
-async function send_commands(ptz_data, camera) {
+async function send_commands(ptz_data, args, camera) {
     let ip = ptz_data[camera]["ip"];
     
     let socket = require('dgram').createSocket('udp4');
@@ -195,13 +174,42 @@ async function send_commands(ptz_data, camera) {
     socket.close();
 }
 
-let ptzRawData = fs.readFileSync('ptz_data.json');
-let ptz_data = JSON.parse(ptzRawData);
-if ("main" in args) {
-    send_commands(ptz_data, "main");
-}
 
-if ("alt" in args) {
-    send_commands(ptz_data, "alt");
-}
 
+if (require.main === module) {
+    let ptzRawData = fs.readFileSync('ptz_data.json');
+    let ptzData = JSON.parse(ptzRawData);
+
+    // Obtain the arguments and pass to minimist to put the args in a map
+    // npm install minimist
+    const args = require('minimist')(process.argv);
+    console.log(args);
+
+    // Help then exit 
+    if ("help" in args) {
+        console.log('\nnode ptz_cameras.js [commands]\n');
+        console.log('\t--main', 'Do these actions to the main camera');
+        console.log('\t--alt', 'Do these actions to the alt camera');
+        console.log('\t--preset', 'Move Camera to position --preset [value]');
+        console.log('\t--pan', 'Set the relative pan --pan [value]');
+        console.log('\t--tilt', 'Set the relative tilt --tilt [value]');
+        console.log('\t--zoom', 'Set the relative zoom --zoom [value]');
+        console.log('\t--off', 'Send off to camera');
+        console.log('\t--on', 'Send on to camera');
+        console.log('\t--query_zoom', 'Get the current zoom values');
+        console.log('\t--query_pan_tilt', 'Get the current pan and tilt values');
+        console.log('\t--query_focus', 'Get the current focus values');
+        console.log('\t--query_all', 'Run all Queries');
+        process.exit(0);
+    }
+
+    if ("main" in args) {
+        send_commands(ptzData, args, "main");
+    }
+
+    if ("alt" in args) {
+        send_commands(ptzData, args, "alt");
+    }    
+} else {
+    module.exports = { send_commands };
+}
