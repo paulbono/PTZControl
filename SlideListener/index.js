@@ -16,7 +16,7 @@ function pressBitCompanionButton(page, button) {
         let bitCompanionOptions = {
             hostname: "127.0.0.1",
             port: "8888",
-            path: "/press/bank" + page + "/" + button,
+            path: "/press/bank/" + page + "/" + button,
             method: "GET"
         };
         http.request(bitCompanionOptions, res => {
