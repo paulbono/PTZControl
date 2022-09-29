@@ -73,7 +73,6 @@ app.post('/slide', async function (req, res) {
 			// Press PNP Overlay
 			await pressBitCompanionButton(1, 11);
 
-			// TODO Insert Toggles in all tags
 			// Press Toggle A
 			//await pressBitCompanionButton(1, 30);
 			// Press Toggle B
@@ -87,6 +86,14 @@ app.post('/slide', async function (req, res) {
 			camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
+			// Press PNP Overlay
+			await pressBitCompanionButton(1, 11);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
+
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 			break;
@@ -95,6 +102,12 @@ app.post('/slide', async function (req, res) {
 			await pressBitCompanionButton(1, 5);
 			// Press Mac Overlay
 			await pressBitCompanionButton(1, 10);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
+
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 			break;
@@ -105,14 +118,22 @@ app.post('/slide', async function (req, res) {
 			await pressBitCompanionButton(1, 3);
 			// Press PNP Overlay
 			await pressBitCompanionButton(1, 11);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Sermon Theme]":
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "sermon_center"}, "alt");
 			// Camera 6
 			await pressBitCompanionButton(1, 4);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 
@@ -123,6 +144,10 @@ app.post('/slide', async function (req, res) {
 			camera.send_commands(ptzData, {"preset": "sermon_center"}, "main");
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 
@@ -136,15 +161,21 @@ app.post('/slide', async function (req, res) {
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
 
-			break
+			break;
 		case "[Creed]":
 			// Point Camera 5
 			camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
+			// Press PNP Overlay
+			await pressBitCompanionButton(1, 11);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Prayer]":
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "altar_center"}, "alt");
@@ -152,25 +183,35 @@ app.post('/slide', async function (req, res) {
 			await pressBitCompanionButton(1, 4);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Lords Prayer]":
 			// Camera 7
 			await pressBitCompanionButton(1, 5);
 			// Press Mac Overlay
 			await pressBitCompanionButton(1, 10);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Institution]":
 			// Point Camera 5
 			camera.send_commands(ptzData, {"preset": "altar_center"}, "main");
 			// Press Mac Overlay
 			await pressBitCompanionButton(1, 10);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Distribution]":
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "wide"}, "alt");
@@ -178,25 +219,35 @@ app.post('/slide', async function (req, res) {
 			await pressBitCompanionButton(1, 4);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[End of Distribution]":
 			// Point Camera 5
 			camera.send_commands(ptzData, {"preset": "altar_center_pnp"}, "main");
 			// Press PNP Overlay
 			await pressBitCompanionButton(1, 11);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Closing Hymn]":
 			// Camera 7
 			await pressBitCompanionButton(1, 5);
 			// Press Mac Overlay
 			await pressBitCompanionButton(1, 10);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
+			
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Silent prayer]":
 			// Point Camera 6
 			camera.send_commands(ptzData, {"preset": "wide"}, "alt");
@@ -204,25 +255,35 @@ app.post('/slide', async function (req, res) {
 			await pressBitCompanionButton(1, 4);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Announcements]":
 			// Point Camera 5
 			camera.send_commands(ptzData, {"preset": "worship_center"}, "main");
 			// Press PNP Overlay
 			await pressBitCompanionButton(1, 11);
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
 			// Camera 5
 			await pressBitCompanionButton(1, 3);
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[After Service Video]":
 			// Camera 7
 			await pressBitCompanionButton(1, 5);
 			// Press Mac Overlay
 			await pressBitCompanionButton(1, 10);
+
+			// Press Toggle A
+			//await pressBitCompanionButton(1, 30);
+			// Press Toggle B
+			//await pressBitCompanionButton(1, 31);
+
 			// Press Auto
 			await pressBitCompanionButton(1, 2);
-			break
+			break;
 		case "[Thank You For Worshiping]":
 			// Wait 10 Seconds
 			await sleep(TEN_SECONDS_IN_MS);

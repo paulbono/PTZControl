@@ -21,6 +21,7 @@ click 'Run Sub/User Form" and all break points should land on "Test Passed"
 
 Slide listener will listen for these tags and behave approprately.
 
+* [Start]
 * [Worship Hymn]
 * [Call To Worship]
 * [Old Testment]
