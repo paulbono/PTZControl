@@ -14,15 +14,18 @@ let ptzData = JSON.parse(ptzRawData);
 function pressBitCompanionButton(page, button) {
     return new Promise(function (resolve, reject) {
         let bitCompanionOptions = {
-            hostname: "127.0.0.1",
-            port: "8888",
-            path: "/press/bank/" + page + "/" + button,
-            method: "GET"
+            host: 'http://127.0.0.1',
+            port: '8888',
+            path: '/press/bank/' + page + '/' + button,
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         };
-        http.request(bitCompanionOptions, res => {
-            console.log(res);
-            resolve(true);
+        var res = http.get(bitCompanionOptions, (res) => {
+            console.log(`Status ${res.statusCode}`);
         });
+        resolve(res);
     });
 }
 
@@ -320,7 +323,6 @@ app.post('/slide', async function (req, res) {
         default:
             console.log("Don't know this tag");
     }
-    res.send('');
 })
 
 app.listen(port, () => {});
