@@ -245,6 +245,8 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(2, 3);
             // turn on overlay
             await pressBitCompanionButton(2, 8);
+            // Wait 15 Seconds
+            await sleep(FIFTEEN_SECONDS_IN_MS);
             // Press Private communion
             await pressBitCompanionButton(2, 18);
             await sleep(FIFTEEN_SECONDS_IN_MS);
