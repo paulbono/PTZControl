@@ -24,7 +24,7 @@ Slide listener will listen for these tags and behave approprately.
 * [Start]
 * [Worship Hymn]
 * [Call To Worship]
-* [Old Testment]
+* [Old Testament]
 * [Sermon Hymn]
 * [Sermon Text]
 * [Sermon Theme]

@@ -43,7 +43,6 @@ let setSessionTags = [];
 // Assuming tag will always exist in post data
 app.post('/slide', async function (req, res) {
     console.log(req.body);
-    //res.json(req.body);
 
     // Doing this so we don't trigger the same tag twice in a given "service" since there is state involved here
     if (req.body.tag == "[Start]") {
@@ -54,7 +53,8 @@ app.post('/slide', async function (req, res) {
     } else {
         setSessionTags.push(req.body.tag);
     }
-
+    res.json(req.body);
+/*
     switch(req.body.tag)
     {
         case "[Start]":
@@ -98,7 +98,7 @@ app.post('/slide', async function (req, res) {
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
-        case "[Old Testment]":
+        case "[Old Testament]":
             // Point Camera 5
             camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
             // Camera 5
@@ -320,7 +320,7 @@ app.post('/slide', async function (req, res) {
         default:
             console.log("Don't know this tag");
     }
-    res.send('');
+    res.send('');*/
 })
 
 app.listen(port, () => {});
