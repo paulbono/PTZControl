@@ -358,7 +358,8 @@ app.post('/slide', async function (req, res) {
             await sleep(FIFTEEN_SECONDS_IN_MS);
             // Turn off overlay
             await pressBitCompanionButton(2, 8);
-            // TODO Stop Stream
+            // Stop Stream
+            await pressBitCompanionButton(1, 16);
             break;
         default:
             console.log("Don't know this tag");
