@@ -76,7 +76,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Begin Program]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "worship_center"}, "main");
             // Point Camera 6
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Camera 6
@@ -93,6 +93,12 @@ app.post('/slide', async function (req, res) {
             await sleep(FIFTEEN_SECONDS_IN_MS);
             // Turn off overlay
             await pressBitCompanionButton(2, 8);
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
             break;
         case "[Worship Hymn]":
             // Camera 7
