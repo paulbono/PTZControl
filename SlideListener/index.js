@@ -20,7 +20,8 @@ function pressBitCompanionButton(page, button) {
             method: "GET"
         };
         http.request(bitCompanionOptions, res => {
-            resolve(console.log(res));
+            console.log(res);
+            resolve(true);
         });
     });
 }
