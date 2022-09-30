@@ -354,15 +354,18 @@ app.post('/slide', async function (req, res) {
     }
 })
 
-// Camera 7
-await pressBitCompanionButton(1, 5);
-// Press Auto
-await pressBitCompanionButton(1, 2);
-// Camera 7
-await pressBitCompanionButton(1, 5);
-// Wait 1 second
-await sleep(ONE_SECOND_IN_MS);
-// Press Auto
-await pressBitCompanionButton(1, 2);
+async function setup() {
+    // Camera 7
+    await pressBitCompanionButton(1, 5);
+    // Press Auto
+    await pressBitCompanionButton(1, 2);
+    // Camera 7
+    await pressBitCompanionButton(1, 5);
+    // Wait 1 second
+    await sleep(ONE_SECOND_IN_MS);
+    // Press Auto
+    await pressBitCompanionButton(1, 2);
+}
 
+setup();
 app.listen(port, () => {});
