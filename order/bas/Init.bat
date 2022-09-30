@@ -16,6 +16,11 @@ start "I'm Running..." "C:\Program Files (x86)\Google\Chrome\Application\chrome.
 start "I'm Running..." "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --profile-directory="Profile 1" http://10.0.0.154/ -incognito
 start "I'm Running..." "C:\Users\User\Desktop\PTZControl\WrapperScript\On.bat"
 start "I'm Running..." "C:\Users\User\Desktop\query.bat"
+start "I'm Running..." node PTZControl\SlideListener\index.js
+
+pushd PTZControl\SlideListener
+start "I'm Running..." node index.js
+popd
 
 timeout 300 REM Let Livestream start before auto hot key script to select current event
 start "I'm Running..." "C:\Users\User\Desktop\Streaming.ahk"
