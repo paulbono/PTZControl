@@ -54,7 +54,7 @@ app.post('/slide', async function (req, res) {
         setSessionTags.push(req.body.tag);
     }
     res.json(req.body);
-/*
+
     switch(req.body.tag)
     {
         case "[Start]":
@@ -320,7 +320,7 @@ app.post('/slide', async function (req, res) {
         default:
             console.log("Don't know this tag");
     }
-    res.send('');*/
+    res.send('');
 })
 
 app.listen(port, () => {});
