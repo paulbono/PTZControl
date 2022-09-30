@@ -85,6 +85,7 @@ app.post('/slide', async function (req, res) {
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
+            break;
         case "[Worship Hymn]":
             // Camera 7
             await pressBitCompanionButton(1, 5);
