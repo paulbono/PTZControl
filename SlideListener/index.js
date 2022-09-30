@@ -85,6 +85,14 @@ app.post('/slide', async function (req, res) {
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
+            // Press welcome to Christ Pewaukee
+            await pressBitCompanionButton(2, 2);
+            // turn on overlay
+            await pressBitCompanionButton(2, 8);
+            // Wait 15 Seconds
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Turn off overlay
+            await pressBitCompanionButton(2, 8);
             break;
         case "[Worship Hymn]":
             // Camera 7
