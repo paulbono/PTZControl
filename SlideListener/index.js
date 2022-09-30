@@ -65,6 +65,8 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(1, 5);
             // Press Auto
             await pressBitCompanionButton(1, 2);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Camera 7
             await pressBitCompanionButton(1, 5);
             // Wait 1 second
@@ -359,6 +361,8 @@ async function setup() {
     await pressBitCompanionButton(1, 5);
     // Press Auto
     await pressBitCompanionButton(1, 2);
+    // Wait 1 second
+    await sleep(ONE_SECOND_IN_MS);
     // Camera 7
     await pressBitCompanionButton(1, 5);
     // Wait 1 second
