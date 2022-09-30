@@ -63,6 +63,10 @@ app.post('/slide', async function (req, res) {
         case "[Start]":
             // Camera 7
             await pressBitCompanionButton(1, 5);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            // Camera 7
+            await pressBitCompanionButton(1, 5);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -102,6 +106,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -119,6 +125,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -134,6 +142,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -150,6 +160,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -164,6 +176,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -180,6 +194,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -209,6 +225,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -234,6 +252,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -249,6 +269,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -275,6 +297,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -292,6 +316,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
@@ -316,6 +342,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -333,6 +361,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
