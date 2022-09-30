@@ -63,6 +63,8 @@ app.post('/slide', async function (req, res) {
         case "[Start]":
             // Camera 7
             await pressBitCompanionButton(1, 5);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             // Wait 1 second
@@ -73,13 +75,16 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
         case "[Worship Hymn]":
             // Camera 7
             await pressBitCompanionButton(1, 5);
-
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -97,7 +102,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
-
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -113,7 +119,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
-
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -127,7 +134,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
-
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -142,6 +150,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -154,6 +164,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
 
@@ -168,6 +180,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
 
@@ -178,6 +192,8 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "sermon_center"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
 
@@ -193,6 +209,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -201,6 +219,8 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "altar_center"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -214,6 +234,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -229,6 +251,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 31);
             // Camera 5
             await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -237,6 +261,8 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -251,6 +277,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 31);
             // Camera 5
             await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -264,7 +292,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
-            
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -273,6 +302,8 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -287,6 +318,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 31);
             // Camera 5
             await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -300,7 +333,8 @@ app.post('/slide', async function (req, res) {
             //await pressBitCompanionButton(1, 30);
             // Press Toggle B
             //await pressBitCompanionButton(1, 31);
-
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             break;
@@ -311,6 +345,8 @@ app.post('/slide', async function (req, res) {
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Camera 6
             await pressBitCompanionButton(1, 4);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
             // Wait 15 Seconds
