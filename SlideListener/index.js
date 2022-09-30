@@ -240,6 +240,32 @@ app.post('/slide', async function (req, res) {
             await sleep(ONE_SECOND_IN_MS);
             // Press Auto
             await pressBitCompanionButton(1, 2);
+
+            // Press CELC
+            await pressBitCompanionButton(2, 3);
+            // turn on overlay
+            await pressBitCompanionButton(2, 8);
+            // Press Private communion
+            await pressBitCompanionButton(2, 18);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Press Online Offering
+            await pressBitCompanionButton(2, 19);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Press Contact us
+            await pressBitCompanionButton(2, 4);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Press Private communion
+            await pressBitCompanionButton(2, 18);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Press Online Offering
+            await pressBitCompanionButton(2, 19);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Press Contact us
+            await pressBitCompanionButton(2, 4);
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+
+            // Turn off overlay
+            await pressBitCompanionButton(2, 8);
             break;
         case "[End of Distribution]":
             // Point Camera 5
@@ -312,9 +338,14 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(1, 2);
             // Wait 15 Seconds
             await sleep(FIFTEEN_SECONDS_IN_MS);
-            // TODO Copyright
+            // Press Copyright
+            await pressBitCompanionButton(2, 21);
+            // turn on overlay
+            await pressBitCompanionButton(2, 8);
             // Wait 15 Seconds
             await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Turn off overlay
+            await pressBitCompanionButton(2, 8);
             // TODO Stop Stream
             break;
         default:
