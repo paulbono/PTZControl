@@ -14,7 +14,7 @@ let ptzData = JSON.parse(ptzRawData);
 function pressBitCompanionButton(page, button) {
     return new Promise(function (resolve, reject) {
         let bitCompanionOptions = {
-            host: 'http://127.0.0.1',
+            host: '127.0.0.1',
             port: '8888',
             path: '/press/bank/' + page + '/' + button,
             method: 'GET',
