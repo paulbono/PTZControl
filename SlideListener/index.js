@@ -57,6 +57,22 @@ app.post('/slide', async function (req, res) {
 
     switch(req.body.tag)
     {
+    	case "[Start]":
+    		// Camera 7
+            await pressBitCompanionButton(1, 5);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+            // Point Camera 6
+            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            // Camera 6
+            await pressBitCompanionButton(1, 4);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            break;
         case "[Worship Hymn]":
             // Camera 7
             await pressBitCompanionButton(1, 5);
