@@ -57,8 +57,8 @@ app.post('/slide', async function (req, res) {
 
     switch(req.body.tag)
     {
-    	case "[Start]":
-    		// Camera 7
+        case "[Start]":
+            // Camera 7
             await pressBitCompanionButton(1, 5);
             // Press Auto
             await pressBitCompanionButton(1, 2);
