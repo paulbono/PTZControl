@@ -53,6 +53,8 @@ app.post('/slide', async function (req, res) {
     } else if (setSessionTags.includes(req.body.tag)) {
         res.send('');
         return;
+    } else if (req.body.tag.includes("Special")) {
+        //Do nothing
     } else {
         setSessionTags.push(req.body.tag);
     }
@@ -366,6 +368,16 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(2, 8);
             // Stop Stream
             await pressBitCompanionButton(1, 16);
+            break;
+        case "[Sactuary Special]":
+            // Point Camera 6
+            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            // Camera 6
+            await pressBitCompanionButton(1, 4);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
             break;
         default:
             console.log("Don't know this tag");
