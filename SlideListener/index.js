@@ -369,7 +369,7 @@ app.post('/slide', async function (req, res) {
             // Stop Stream
             await pressBitCompanionButton(1, 16);
             break;
-        case "[Sactuary Special]":
+        case "[Sanctuary Special]":
             // Point Camera 6
             camera.send_commands(ptzData, {"preset": "wide"}, "alt");
             // Press Auto
