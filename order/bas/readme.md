@@ -39,3 +39,4 @@ Slide listener will listen for these tags and behave approprately.
 * [Announcements]
 * [After Service Video]
 * [Thank You For Worshiping]
+* [Sactuary Special]
