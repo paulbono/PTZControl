@@ -126,6 +126,20 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Old Testament]":
             // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Press PNP Overlay
+            await pressBitCompanionButton(1, 11);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            // Turn on Key 1 "OnAir"
+            //await pressBitCompanionButton(1, 26);
+            break;
+        case "[Old Testament Warnecke]":
+            // Point Camera 5
             camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
             // Camera 5
             await pressBitCompanionButton(1, 3);
@@ -153,6 +167,20 @@ app.post('/slide', async function (req, res) {
         case "[Sermon Text]":
             // Point Camera 5
             camera.send_commands(ptzData, {"preset": "sermon_center_pnp"}, "main");
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Press PNP Overlay
+            await pressBitCompanionButton(1, 11);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            // Press Auto
+            await pressBitCompanionButton(1, 2);
+            // Turn on Key 1 "OnAir"
+            await pressBitCompanionButton(1, 26);
+            break;
+        case "[Sermon Text Krause]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Press PNP Overlay
