@@ -57,6 +57,7 @@ function pressAuto(){
             // Press Key 1 "OnAir"
             await pressBitCompanionButton(1, 26);
         }
+        resolve();
     });
 }
 
@@ -70,6 +71,7 @@ function setPnp(status) {
             // Press PNP Overlay
             await pressBitCompanionButton(1, 11);
         }
+        resolve();
     });
 }
 
@@ -84,6 +86,10 @@ let setSessionTags = [];
 // Assuming tag will always exist in post data
 app.post('/slide', async function (req, res) {
     console.log(req.body);
+    if (req.body.tag === undefined) {
+        console.log("'tag' not found in post body");
+        return;
+    }
 
     // Doing this so we don't trigger the same tag twice in a given "service" since there is state involved here
     if (req.body.tag == "[Start]") {
