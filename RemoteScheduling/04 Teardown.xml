@@ -3,11 +3,10 @@
   <RegistrationInfo> 
     <Date>2023-04-02T09:44:00.0000</Date> 
     <Author>W10-D-24\User</Author>
-    <URI>04 08 2023\04 Teardown</URI>
   </RegistrationInfo>
   <Triggers>
     <TimeTrigger>
-      <StartBoundary>2023-04-08T18:15:00</StartBoundary>
+      <StartBoundary>2023-04-09T11:45:00</StartBoundary>
       <Enabled>true</Enabled>
     </TimeTrigger>
   </Triggers>
