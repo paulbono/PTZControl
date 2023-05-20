@@ -8,13 +8,13 @@ if WinExist("Livestream Studio", "Livestream Studio")
 {
 	WinActivate	
 	Send #{up}
-	Sleep 500
+	Sleep 1000
 	MouseMove 222, 1050, 5
 	MouseClick, left
-	Sleep 500
+	Sleep 1000
 	MouseMove 160, 850, 5
 	MouseClick, left
-	Sleep 500
+	Sleep 1000
 	MouseMove 160, 880, 5
 	MouseClick, left
 }
