@@ -1,4 +1,7 @@
-@echo off
+REM @echo off
+
+setlocal EnableDelayedExpansion
+
 
 set year=%1
 set month=%2
@@ -20,43 +23,30 @@ REM 03 -0:01
 REM 04 +1:15
 
 
-REM set initHour=
-REM set initMinute=
-REM set streamHour=
-REM set steamMinute=
-REM set teardownHour=
-REM set teardwonMinute=
+REM Call it like this:
+REM newOneShot.bat 2023 12 24 16 00
 
-
-set streamDate = "%year%-%month%-%day%T%militaryhour%:%minute%:00"
-
+REM set streamDate = "%year%-%month%-%day%T%militaryhour%:%minute%:00"
+set streamDate= "%year%-%month%-%day%T"
+echo !streamDate!
 REM 2023-04-08T15:15:00
-REM [templatehour]-[templatemonth]-[templateday]T[templatehour]:[templateminute]
-powershell -Command "(gc \"02 Init.template.xml\") -replace '[StartBoundary]', 'bar' | Out-File -encoding ASCII \"02 Init.xml\""
-powershell -Command "(gc \"03 Start Stream.template.xml\") -replace '[templatehour]', 'bar' | Out-File -encoding ASCII \"02 Init.xml\""
-powershell -Command "(gc \"04 Teardown.template.xml\") -replace '[templatehour]', 'bar' | Out-File -encoding ASCII \"02 Init.xml\""
+
+set timeone= "!streamDate!07:45:00"
+set timetwo= "!streamDate!09:30:00"
+set timethree= "!streamDate!10:45:00"
+REM set timethree= "2023-12-25T00:15:00"
+
+echo !timeone!
+echo !timetwo!
+echo !timethree!
+
+
+powershell -Command "(gc -Path \"02 Init.template.xml\") -replace '\[StartBoundary\]', '!timeone!' | Out-File \"02 Init.xml\""
+powershell -Command "(gc -Path \"03 Start Stream.template.xml\") -replace '\[StartBoundary\]', '!timetwo!' | Out-File \"03 Start Stream.xml\""
+powershell -Command "(gc -Path \"04 Teardown.template.xml\") -replace '\[StartBoundary\]', '!timethree!' | Out-File  \"04 Teardown.xml\""
 
 
 schtasks /CREATE /TN "%year%-%month%-%day%\02 Init" /XML "C:\Users\User\Desktop\PTZControl\RemoteScheduling\02 Init.xml"
 schtasks /CREATE /TN "%year%-%month%-%day%\03 Start Stream" /XML "C:\Users\User\Desktop\PTZControl\RemoteScheduling\03 Start Stream.xml"
 schtasks /CREATE /TN "%year%-%month%-%day%\04 Teardown" /XML "C:\Users\User\Desktop\PTZControl\RemoteScheduling\04 Teardown.xml"
-
-REM schtasks /change /tn "04 08 2023\02 Init" /sc once /sd 04/05/2023 /st 16:15
-
-REM schtasks /delete /TN "04 08 2023\One"
-REM schtasks /create /TN "04 08 2023 One" /V1 /tr "\"C:\Users\User\Desktop\" \"C:\Users\User\Desktop\Init.bat\"" /sc once /sd 04/05/2023 /st 16:15
-
-REM schtasks /change /tn "04 08 2023\One" /tr "C:\Users\User\Desktop\Init.bat" /trd "C:\Users\User\Desktop"
-
-
-
-
-
-
-
-
-
-
-REM REM OLD
-REM SCHTASKS /CREATE /SC DAILY /TN "OneShots\04 08 2023\One" /TR "C:\SOURCE\FOLDER\APP-OR-SCRIPT" /ST HH:MMExampleSCHTASKS /CREATE /SC DAILY /TN "MyTasks\Notepad task" /TR "C:\Windows\System32\notepad.exe" /ST 11:00
 

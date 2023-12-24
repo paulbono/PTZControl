@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-16"?> 
 <Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"> 
   <RegistrationInfo> 
-    <Date>2023-04-02T09:44:00.0000</Date> 
+    <Date>[StartBoundary].0000</Date> 
     <Author>W10-D-24\User</Author>
-    <URI>04 08 2023\04 Teardown</URI>
   </RegistrationInfo>
   <Triggers>
     <TimeTrigger>
-      <StartBoundary>2023-04-08T18:15:00</StartBoundary>
+      <StartBoundary>[StartBoundary]</StartBoundary>
       <Enabled>true</Enabled>
     </TimeTrigger>
   </Triggers>
