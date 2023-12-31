@@ -1,12 +1,22 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: Check if the sixth parameter (for logging) is provided and set to 1
+set "LOGGING_ENABLED=%6"
+if not defined LOGGING_ENABLED set "LOGGING_ENABLED=0"
+
+:: Function to log messages conditionally
+:log
+if "!LOGGING_ENABLED!"=="1" echo [LOG] %*
+goto :EOF
+
+
 :: Skip to the main script flow
 goto main
 
 :: Function to add minutes to a given time
 :adjustTime
-echo [LOG] Adjusting time...
+call :log "Adjusting time..."
 set /A "newMinute=%5 + %6"
 set /A "newHour=%4"
 set /A "newDay=%3"
@@ -47,7 +57,7 @@ set newDay=!newDay:~-2!
 set newHour=!newHour:~-2!
 set newMinute=!newMinute:~-2!
 
-echo [LOG] Time adjusted: newYear=!newYear!, newMonth=!newMonth!, newDay=!newDay!, newHour=!newHour!, newMinute=!newMinute!
+call :log "Time adjusted: newYear=!newYear!, newMonth=!newMonth!, newDay=!newDay!, newHour=!newHour!, newMinute=!newMinute!"
 goto :EOF
 
 
@@ -116,7 +126,7 @@ goto :EOF
 
 :adjustMonth
 call :getLastDayOfMonth %1 %2
-if !newDay! leq !lastDayOfMonth! goto EOF
+if !newDay! leq !lastDayOfMonth! goto end
 :: Increase month if day exceeds month length
 set /A "newDay=%newDay% - lastDayOfMonth"
 set /A "newMonth=%2 + 1"
@@ -127,42 +137,42 @@ goto adjustDate
 
 :: Function to get the last day of a given month
 :getLastDayOfMonth
-echo [LOG] Inside :getLastDayOfMonth
+call :log "Inside :getLastDayOfMonth"
 set /A "year=%1, month=%2"
-echo [LOG] Year: %year%, Month: %month%
+call :log "Year: %year%, Month: %month%"
 :: [Leap year calculation and last day of month logic]
 goto :EOF
 
 :main
 :: Assigning command line arguments to variables
-echo [LOG] Assigning input parameters...
+call :log "Assigning input parameters..."
 set year=%1
 set month=%2
 set day=%3
 set militaryhour=%4
 set minute=%5
 
-echo [LOG] Input parameters: Year=%year%, Month=%month%, Day=%day%, Hour=%militaryhour%, Minute=%minute%
+call :log "Input parameters: Year=%year%, Month=%month%, Day=%day%, Hour=%militaryhour%, Minute=%minute%"
 
 :: Calculate timeone (105 minutes before)
-echo [LOG] Calculating timeone... %year% %month% %day% %militaryhour% %minute% -105
+call :log "Calculating timeone... %year% %month% %day% %militaryhour% %minute% -105"
 call :adjustTime %year% %month% %day% %militaryhour% %minute% -105
-echo [LOG] then I get !newYear!-!newMonth!-!newDay!T!newHour!:!newMinute!:00
+call :log "then I get !newYear!-!newMonth!-!newDay!T!newHour!:!newMinute!:00"
 set timeone=!newYear!-!newMonth!-!newDay!T!newHour!:!newMinute!:00
-echo [LOG] timeone: !timeone!
+call :log "timeone: !timeone!"
 
 :: Calculate timetwo (1 minute before)
-echo [LOG] Calculating timetwo...  %year% %month% %day% %militaryhour% %minute% -1
+call :log "Calculating timetwo...  %year% %month% %day% %militaryhour% %minute% -1"
 call :adjustTime %year% %month% %day% %militaryhour% %minute% -1
 set timetwo=!newYear!-!newMonth!-!newDay!T!newHour!:!newMinute!:00
-echo [LOG] timetwo: %timetwo%
+call :log "timetwo: %timetwo%"
 
 :: Calculate timethree (75 minutes after)
-echo [LOG] Calculating timethree... %year% %month% %day% %militaryhour% %minute% 75
+call :log "Calculating timethree... %year% %month% %day% %militaryhour% %minute% 75"
 call :adjustTime %year% %month% %day% %militaryhour% %minute% 75
 set timethree=!newYear!-!newMonth!-!newDay!T!newHour!:!newMinute!:00
-echo [LOG] timethree: %timethree%
+call :log "timethree: %timethree%"
 
-:EOF
+:end
 :: Transfer variables to the global environment
 ENDLOCAL & SET timeone=%timeone% & SET timetwo=%timetwo% & SET timethree=%timethree%
