@@ -31,8 +31,11 @@ set streamDate= "%year%-%month%-%day%T"
 echo !streamDate!
 REM 2023-04-08T15:15:00
 
+REM 105 minutes before start
 set timeone= "!streamDate!07:45:00"
+REM 1 minute before start
 set timetwo= "!streamDate!09:30:00"
+REM 75 minutes after start
 set timethree= "!streamDate!10:45:00"
 REM set timethree= "2023-12-25T00:15:00"
 
