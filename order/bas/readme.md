@@ -23,6 +23,7 @@ Slide listener will listen for these tags and behave approprately.
 
 [Start]  
 [Worship Hymn]  
+[Baptism]
 [Call To Worship]  
 [Old Testament]  
 [Old Testament Warnecke]  

@@ -89,10 +89,10 @@
             "focus": "01ED"
         },
         "pulpit_center": {
-            "zoom": "362C",
-            "pan": "00E2",
-            "tilt": "FFD0",
-            "focus": "0243"
+            "zoom": "345F",
+            "pan": "008B",
+            "tilt": "FFD9",
+            "focus": "0201"
         },
         "pulpit_center_pnp": {
             "zoom": "362C",
@@ -101,17 +101,17 @@
             "focus": "0247"
         },
         "sermon_center": {
-            "zoom": "32B0",
-            "pan": "0050",
-            "tilt": "FFC8",
-            "focus": "01E9"
-        },
+			"zoom": "2E8B",
+			"pan": "0032",
+			"tilt": "FFCD",
+			"focus": "0205"
+		},
         "sermon_center_pnp": {
-            "zoom": "3579",
-            "pan": "0030",
-            "tilt": "FFD3",
-            "focus": "0228"
-        },
+			"zoom": "2E8B",
+			"pan": "0003",
+			"tilt": "FFCD",
+			"focus": "0205"
+		},
         "altar_center": {
             "zoom": "3642",
             "pan": "0093",

@@ -11,6 +11,7 @@ const port = 3000;
 const ONE_SECOND_IN_MS = 1000;
 const TEN_SECONDS_IN_MS = 10000;
 const FIFTEEN_SECONDS_IN_MS = 15000;
+const ONE_MINUTE_IN_MS = 60000;
 const FIVE_MINUTES_IN_MS = 300000;
 const OFF = false;
 const ON = true;
@@ -95,8 +96,8 @@ app.post('/slide', async function (req, res) {
     if (req.body.tag == "[Start]") {
         setSessionTags = [];
     } else if (setSessionTags.includes(req.body.tag)) {
-        res.send('');
-        return;
+        //res.send('');
+        //return;
     } else if (req.body.tag.includes("Special")) {
         //Do nothing
     } else {
@@ -135,8 +136,8 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(2, 2);
             // turn on overlay
             await pressBitCompanionButton(2, 8);
-            // Wait 15 Seconds
-            await sleep(FIFTEEN_SECONDS_IN_MS);
+            // Wait 60 Seconds
+            await sleep(ONE_MINUTE_IN_MS);
             // Turn off overlay
             await pressBitCompanionButton(2, 8);
             // Camera 5
@@ -152,6 +153,16 @@ app.post('/slide', async function (req, res) {
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             await setPnp(OFF);
+            await pressAuto();
+            break;
+        case "[Baptism]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "baptism"}, "main");
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            await setPnp(ON);
             await pressAuto();
             break;
         case "[Call To Worship]":
