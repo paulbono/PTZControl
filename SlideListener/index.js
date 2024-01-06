@@ -155,6 +155,16 @@ app.post('/slide', async function (req, res) {
             await setPnp(OFF);
             await pressAuto();
             break;
+        case "[Baptism]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "baptism"}, "main");
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            await setPnp(ON);
+            await pressAuto();
+            break;
         case "[Call To Worship]":
             // Point Camera 5
             camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
