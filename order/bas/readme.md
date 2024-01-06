@@ -23,10 +23,9 @@ Slide listener will listen for these tags and behave approprately.
 
 [Start]  
 [Worship Hymn]  
-[Baptism]
+[Baptism]  
 [Call To Worship]  
 [Old Testament]  
-[Old Testament Warnecke]  
 [Sermon Hymn]  
 [Sermon Text]  
 [Sermon Text Krause]  
