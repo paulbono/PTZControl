@@ -162,7 +162,6 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
-            await setPnp(ON);
             await pressAuto();
             break;
         case "[Call To Worship]":
@@ -258,7 +257,17 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
 
             break;
-        case "[Creed]":
+        case "[Pulpit]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "pulpit_center"}, "main");
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            await setPnp(ON);
+            await pressAuto();
+            break;
+		case "[Creed]":
             // Point Camera 5
             camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
             // Camera 5

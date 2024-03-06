@@ -31,6 +31,7 @@ Slide listener will listen for these tags and behave approprately.
 [Sermon Text Krause]  
 [Sermon Theme]  
 [Creed]  
+[Pulpit]  
 [Prayer]  
 [Lords Prayer]  
 [Institution]  
