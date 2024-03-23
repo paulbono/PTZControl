@@ -113,10 +113,10 @@
 			"focus": "0205"
 		},
         "altar_center": {
-            "zoom": "3642",
-            "pan": "0093",
-            "tilt": "FFD5",
-            "focus": "024C"
+            "zoom": "363F",
+			"pan": "007D",
+			"tilt": "FFDB",
+			"focus": "024D"
         },
         "altar_center_pnp": {
             "zoom": "3642",

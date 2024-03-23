@@ -390,6 +390,7 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
             break;
         case "[Thank You For Worshiping]":
+        case "[Thank You For Worshipping]":
             // Wait 10 Seconds
             await sleep(TEN_SECONDS_IN_MS);
             // Point Camera 6
