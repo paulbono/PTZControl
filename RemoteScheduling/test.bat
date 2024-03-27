@@ -5,12 +5,18 @@ setlocal
 goto main
 
 :shouldSeeSecond
-echo should see second
+echo %*
+goto :EOF
+
+:shouldSeeThird
+echo %
 goto :EOF
 
 :main
 echo should see first
-call :shouldSeeSecond 
+call :shouldSeeSecond should see second
+call :shouldSeeThird should see third
+goto :EOF
 
 :EOF
 echo i'm done
