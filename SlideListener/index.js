@@ -264,7 +264,6 @@ app.post('/slide', async function (req, res) {
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
-            await setPnp(ON);
             await pressAuto();
             break;
 		case "[Creed]":
