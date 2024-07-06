@@ -147,6 +147,12 @@
             "pan": "0990",
             "tilt": "FE50",
             "focus": "0677"
-        }
+        },
+		"krause_mid_pulpit": {
+			"zoom": "34AE", 
+			"pan": "00B4",
+			"tilt": "FFC9", 
+			"focus": "020A" 
+		}
     }
 }

@@ -16,6 +16,9 @@ const FIVE_MINUTES_IN_MS = 300000;
 const OFF = false;
 const ON = true;
 
+const MAIN = "main";
+const ALT = "alt";
+
 let ptzRawData = fs.readFileSync('../ptz_data.json');
 let ptzData = JSON.parse(ptzRawData);
 
@@ -123,9 +126,9 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Begin Program]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "worship_center"}, "main");
+            camera.send_commands(ptzData, {"preset": "worship_center"}, MAIN);
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -157,7 +160,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Baptism]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "baptism"}, "main");
+            camera.send_commands(ptzData, {"preset": "baptism"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -165,8 +168,9 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
             break;
         case "[Call To Worship]":
+        case "[Call to Worship]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -176,7 +180,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Old Testament]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -186,7 +190,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Old Testament Warnecke]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "worship_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -204,7 +208,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Sermon Text]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "sermon_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "sermon_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -214,7 +218,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Sermon Text Krause]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -224,7 +228,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Sermon Theme]":
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "sermon_center"}, "alt");
+            camera.send_commands(ptzData, {"preset": "sermon_center"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -236,7 +240,7 @@ app.post('/slide', async function (req, res) {
             await sleep(FIVE_MINUTES_IN_MS);
 
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "sermon_center"}, "main");
+            camera.send_commands(ptzData, {"preset": "sermon_center"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -248,7 +252,7 @@ app.post('/slide', async function (req, res) {
             await sleep(FIVE_MINUTES_IN_MS);
 
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "sermon_center"}, "alt");
+            camera.send_commands(ptzData, {"preset": "sermon_center"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -259,7 +263,17 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Pulpit]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "pulpit_center"}, "main");
+            camera.send_commands(ptzData, {"preset": "pulpit_center"}, MAIN);
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            await pressAuto();
+            break;
+			//krause_mid_pulpit
+		case "[Krause Mid Pulpit]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "krause_mid_pulpit"}, ALT);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -268,7 +282,7 @@ app.post('/slide', async function (req, res) {
             break;
 		case "[Creed]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "pulpit_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -278,7 +292,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Prayer]":
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "altar_center"}, "alt");
+            camera.send_commands(ptzData, {"preset": "altar_center"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -296,7 +310,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Institution]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "altar_center"}, "main");
+            camera.send_commands(ptzData, {"preset": "altar_center"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -306,7 +320,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Distribution]":
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -344,7 +358,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[End of Distribution]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "altar_center_pnp"}, "main");
+            camera.send_commands(ptzData, {"preset": "altar_center_pnp"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -362,7 +376,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Silent prayer]":
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -372,7 +386,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Announcements]":
             // Point Camera 5
-            camera.send_commands(ptzData, {"preset": "worship_center"}, "main");
+            camera.send_commands(ptzData, {"preset": "worship_center"}, MAIN);
             // Camera 5
             await pressBitCompanionButton(1, 3);
             // Wait 1 second
@@ -393,7 +407,7 @@ app.post('/slide', async function (req, res) {
             // Wait 10 Seconds
             await sleep(TEN_SECONDS_IN_MS);
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             // Camera 6
             await pressBitCompanionButton(1, 4);
             // Wait 1 second
@@ -415,7 +429,7 @@ app.post('/slide', async function (req, res) {
             break;
         case "[Sanctuary Special]":
             // Point Camera 6
-            camera.send_commands(ptzData, {"preset": "wide"}, "alt");
+            camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             await setPnp(OFF);
             await pressAuto();
             // Camera 6
