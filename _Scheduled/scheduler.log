@@ -37,3 +37,21 @@ Sat Nov  2 16:48:21 CDT 2024: Manually executing job: /Users/av/git/PTZControl/_
 58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
 59 16 * * 6 /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh # Saturday StartStream >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
 15 18 * * 6 /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh # Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+59 16 * * 6 /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh # Saturday StartStream >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+15 18 * * 6 /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh # Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+59 16 * * 6 /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh # Saturday StartStream >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+15 18 * * 6 /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh # Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 18:15:00 CDT 2024: Running Off.sh equivalent
+Sat Nov  2 18:15:06 CDT 2024: Terminating OBS
+Sat Nov  2 18:15:06 CDT 2024: OBS terminated
+Sat Nov  2 18:15:06 CDT 2024: Terminating Companion
+Sat Nov  2 18:15:06 CDT 2024: Companion terminated
+Sat Nov  2 18:15:06 CDT 2024: Terminating Safari
+Sat Nov  2 18:15:06 CDT 2024: Safari terminated
+Sat Nov  2 18:15:06 CDT 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Nov  2 18:15:36 CDT 2024: Opening AutomationInProgress.txt in TextEdit
+Sat Nov  2 18:15:36 CDT 2024: Adding and committing changes to Git repository

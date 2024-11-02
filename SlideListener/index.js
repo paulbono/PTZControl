@@ -375,6 +375,7 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
             break;
         case "[Silent prayer]":
+        case "[Silent Prayer]":
             // Point Camera 6
             camera.send_commands(ptzData, {"preset": "wide"}, ALT);
             // Camera 6
