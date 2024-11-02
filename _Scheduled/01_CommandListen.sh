@@ -1,24 +1,29 @@
 #!/bin/bash
 
-echo "Starting in 15 seconds"
-sleep 15
+# Log file path
+LOG_FILE="/Users/av/git/PTZControl/_Scheduled/scheduler.log"
 
+# Logging function
+log() {
+    echo "$(date): $1" | tee -a "$LOG_FILE"
+}
 
-# Start Node.js PTZControl SlideListener script
-echo "Starting PTZControl SlideListener"
-cd /Users/av/git/PTZControl/SlideListener || echo "PTZControl SlideListener directory not found."
-node index.js
+# Start Node.js PTZControl SlideListener script in the background
+log "Starting PTZControl SlideListener"
+cd /Users/av/git/PTZControl/SlideListener || { log "PTZControl SlideListener directory not found."; exit 1; }
+node index.js >> "$LOG_FILE" 2>&1 &  # Run in background and log output
 
-# Wait for OBS to start fully
-sleep 300
+# Wait a moment to ensure the listener starts properly
+sleep 2
 
-# Run Streaming.ahk equivalent (if applicable, otherwise replace with Mac-compatible version)
-echo "Running Streaming.ahk equivalent"
-# ./path/to/streaming_script.sh
+# Run Streaming.ahk equivalent (replace with Mac-compatible version if needed)
+# Uncomment and modify the following line if there's a Mac equivalent
+# log "Running Streaming.ahk equivalent"
+# ./path/to/streaming_script.sh >> "$LOG_FILE" 2>&1
 
 # Wait 3 seconds
 sleep 3
 
-# Run prep.bat equivalent
-echo "Running prep.bat equivalent"
-# ./path/to/prep_script.sh
+# Run prep.sh equivalent to prep the environment
+log "Running prep.sh equivalent"
+open /Users/av/git/PTZControl/orderMac/prep.sh >> "$LOG_FILE" 2>&1

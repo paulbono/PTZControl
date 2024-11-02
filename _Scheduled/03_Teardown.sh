@@ -2,7 +2,7 @@
 
 # Run Off.bat equivalent script
 # echo "Running Off.bat equivalent"
-bash /Users/av/git/PTZControl/WrapperScriptMac/Off.sh
+open /Users/av/git/PTZControl/WrapperScriptMac/Off.sh
 
 # Wait 5 seconds
 sleep 5

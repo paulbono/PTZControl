@@ -1,0 +1,39 @@
+Sat Nov  2 16:16:24 CDT 2024: Invalid path or not executable: '/Users/av/git/PTZControl/_Scheduled/00_Init.sh'
+Sat Nov  2 16:16:36 CDT 2024: Executable found and is valid: 00_Init.sh
+Sat Nov  2 16:16:39 CDT 2024: Test job added: * * * * * 00_Init.sh >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:16:49 CDT 2024: Test job executed successfully.
+Sat Nov  2 16:16:49 CDT 2024: Test job removed.
+Sat Nov  2 16:23:04 CDT 2024: Executable found and is valid: /Users/av/git/PTZControl/_Scheduled/00_Init.sh
+Sat Nov  2 16:23:51 CDT 2024: Scheduling recurring task 'Saturday Init': weekly at 30 15 * * 6
+Sat Nov  2 16:23:55 CDT 2024: Task scheduled with cron entry: 30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:26:06 CDT 2024: Executable found and is valid: /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh
+Sat Nov  2 16:29:01 CDT 2024: Scheduling recurring task 'Saturday Listener': weekly at 58 16 * * 6
+Sat Nov  2 16:29:03 CDT 2024: Task scheduled with cron entry: 58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:32:16 CDT 2024: Invalid path or not executable: 4
+Sat Nov  2 16:32:40 CDT 2024: Executable found and is valid: /Users/av/git/PTZControl/_Scheduled/test.sh
+Sat Nov  2 16:33:08 CDT 2024: Scheduling recurring task 'test me': weekly at 34 16 * * 6
+Sat Nov  2 16:33:10 CDT 2024: Task scheduled with cron entry: 34 16 * * 6 /Users/av/git/PTZControl/_Scheduled/test.sh # test me >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:36:00 CDT 2024: Manually executing job: 34 16 * * 6 /Users/av/git/PTZControl/_Scheduled/test.sh 
+Sat Nov  2 16:36:00 CDT 2024: Job executed.
+Sat Nov  2 16:38:32 CDT 2024: Manually executing job: 34 16 * * 6 /Users/av/git/PTZControl/_Scheduled/test.sh 
+Sat Nov  2 16:38:32 CDT 2024: Job executed.
+Sat Nov  2 16:40:42 CDT 2024: Manually executing job: /Users/av/git/PTZControl/_Scheduled/test.sh
+Sat Nov  2 16:40:42 CDT 2024: Job executed.
+Sat Nov  2 16:41:09 CDT 2024: Job 3 deleted.
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:41:47 CDT 2024: Executable found and is valid: /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh
+Sat Nov  2 16:42:14 CDT 2024: Scheduling recurring task 'Saturday StartStream': weekly at 59 16 * * 6
+Sat Nov  2 16:42:16 CDT 2024: Task scheduled with cron entry: 59 16 * * 6 /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh # Saturday StartStream >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:42:28 CDT 2024: Executable found and is valid: /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh
+Sat Nov  2 16:42:50 CDT 2024: Scheduling recurring task 'Saturday Teardown': weekly at 15 18 * * 6
+Sat Nov  2 16:42:50 CDT 2024: Task scheduled with cron entry: 15 18 * * 6 /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh # Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 16:43:33 CDT 2024: Manually executing job: /Users/av/git/PTZControl/_Scheduled/00_Init.sh
+Sat Nov  2 16:48:21 CDT 2024: Manually executing job: /Users/av/git/PTZControl/_Scheduled/00_Init.sh
+30 15 * * 6 /Users/av/git/PTZControl/_Scheduled/00_Init.sh # Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+58 16 * * 6 /Users/av/git/PTZControl/_Scheduled/01_CommandListen.sh # Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+59 16 * * 6 /Users/av/git/PTZControl/_Scheduled/02_StartStream.sh # Saturday StartStream >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+15 18 * * 6 /Users/av/git/PTZControl/_Scheduled/03_Teardown.sh # Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1

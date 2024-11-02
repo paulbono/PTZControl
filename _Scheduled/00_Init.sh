@@ -1,29 +1,42 @@
 #!/bin/bash
 
-echo "Starting in 15 seconds"
+# Log file path
+LOG_FILE="/Users/av/git/PTZControl/_Scheduled/scheduler.log"
+
+# Logging function
+log() {
+    echo "$(date): $1" | tee -a "$LOG_FILE"
+}
+
+log "Starting initialization sequence with a 15-second delay."
 sleep 15
 
 # Start OBS
-open -a "/Applications/OBS.app" || echo "OBS not found. Verify path."
+log "Starting OBS"
+open -a "/Applications/OBS.app" >> "$LOG_FILE" 2>&1 || log "OBS not found. Verify path."
 
 # Wait 5 seconds
 sleep 5
 
 # Start Companion
-open -a "/Applications/Companion.app" || echo "Companion not found. Verify path."
+log "Starting Companion"
+open -a "/Applications/Companion.app" >> "$LOG_FILE" 2>&1 || log "Companion not found. Verify path."
 
 # Wait 15 seconds
 sleep 15
 
-# Start Stream Deck and Chrome with specific profiles and URLs
-open -a "/Applications/Elgato Stream Deck.app" || echo "Stream Deck not found. Verify path."
-open -na "/Applications/Google Chrome.app" --args --profile-directory="Profile 1" http://10.0.0.132/ -incognito
-open -na "/Applications/Google Chrome.app" --args --profile-directory="Profile 1" http://10.0.0.154/ -incognito
+# Start Stream Deck and Safari with specific URLs
+log "Starting Stream Deck"
+open -a "/Applications/Elgato Stream Deck.app" >> "$LOG_FILE" 2>&1 || log "Stream Deck not found. Verify path."
+
+log "Opening Safari with specified URLs"
+open -na "/Applications/Safari.app" "http://10.0.0.132" >> "$LOG_FILE" 2>&1
+open -na "/Applications/Safari.app" "http://10.0.0.154" >> "$LOG_FILE" 2>&1
 
 # Run WrapperScript On.sh
-echo "Running WrapperScript On.sh"
-bash /Users/av/git/PTZControl/WrapperScriptMac/On.sh
+log "Running WrapperScript On.sh"
+open /Users/av/git/PTZControl/WrapperScriptMac/On.sh >> "$LOG_FILE" 2>&1 || log "On.sh not found. Verify path."
 
 # Run query.sh
-echo "Running query.sh"
-bash /Users/av/git/PTZControl/WrapperScriptMac/query.sh
+log "Running query.sh"
+open /Users/av/git/PTZControl/WrapperScriptMac/query.sh >> "$LOG_FILE" 2>&1 || log "query.sh not found. Verify path."
