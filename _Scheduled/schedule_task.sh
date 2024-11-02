@@ -162,21 +162,45 @@ view_jobs() {
     crontab -l | tee -a "$LOG_FILE"
 }
 
-# Manually run a job and log to database
 manual_run() {
     echo "Available jobs:"
     crontab -l | grep "#" | awk -F'#' '{print $2}' | nl
     read -p "Enter the job number to run manually: " job_number
 
-    # Extract job command
-    job_command=$(crontab -l | grep "#" | awk -F'#' '{print $1}' | awk '{$1=$2=$3=$4=$5=""; print $0}' | sed 's/^ *//g' | sed -n "${job_number}p")
-    job_name=$(crontab -l | grep "#" | sed -n "${job_number}p" | awk -F'#' '{print $2}' | sed 's/^ *//g')
+    # Extract job command and job name
+    cron_entry=$(crontab -l | grep "#" | sed -n "${job_number}p")
+
+    if [[ -z "$cron_entry" ]]; then
+        echo "Invalid job number."
+        return
+    fi
+
+    # Extract command and job name
+    job_command=$(echo "$cron_entry" | awk '{$1=$2=$3=$4=$5=""; print $0}' | sed 's/^ *//g' | awk -F'#' '{print $1}')
+    job_name=$(echo "$cron_entry" | awk -F'#' '{print $2}' | sed 's/^ *//g')
 
     if [[ -z "$job_command" ]]; then
-        echo "Invalid job number."
+        echo "Unable to extract command for job."
     else
-        log "Manually executing job: $job_command"
-        start_job "$job_name" "$job_command"
+        run_job "$job_name" "$job_command"
+    fi
+}
+
+# Run a job and log the results to the database
+run_job() {
+    local job_name="$1"
+    local job_command="$2"
+
+    log "Starting job: $job_name"
+    eval "$job_command" >> "$LOG_FILE" 2>&1
+    if [[ $? -eq 0 ]]; then
+        log "Job '$job_name' completed successfully."
+        log_to_db "$job_name" "SUCCESS" "Job ran successfully."
+        echo "Job executed successfully."
+    else
+        log "Job '$job_name' failed."
+        log_to_db "$job_name" "FAILED" "Job encountered an error."
+        echo "Job execution failed."
     fi
 }
 
@@ -202,38 +226,52 @@ copy_job_one_off() {
     fi
 }
 
-# View job details, including last run info from SQLite
 job_details() {
     echo "Current jobs:"
     echo "ID | Job Name           | Last Run           | Status      | Message"
     echo "-----------------------------------------------------------------------"
     
-    # Query SQLite for all jobs
-    sqlite3 "$DB_FILE" -separator "|" "SELECT id, job_name, last_run, status, message FROM jobs;" | \
-    while IFS="|" read -r id job_name last_run status message; do
-        printf "%-3s| %-18s| %-18s| %-11s| %s\n" "$id" "$job_name" "$last_run" "$status" "$message"
+    displayed_jobs=()  # Array to keep track of displayed job names
+
+    # List cron jobs with line numbers and truncate display after '>>'
+    crontab -l | nl | grep "#" | \
+    while read -r line_number cron_entry; do
+        # Extract the job command and job name
+        job_command=$(echo "$cron_entry" | awk '{$1=$2=$3=$4=$5=""; print $0}' | sed 's/^ *//g' | awk -F'#' '{print $1}')
+        job_name=$(echo "$cron_entry" | awk -F'#' '{print $2}' | sed 's/^ *//g')
+        
+        # Truncate job name after '>>' for display
+        display_name=$(echo "$job_name" | sed 's/>>.*//')
+        
+        # Get the latest run information for this job from the database
+        latest_run=$(sqlite3 "$DB_FILE" -separator "|" "SELECT last_run, status, message FROM jobs WHERE job_name='$display_name' ORDER BY last_run DESC LIMIT 1;")
+        
+        # Parse latest_run details
+        last_run=$(echo "$latest_run" | cut -d'|' -f1)
+        status=$(echo "$latest_run" | cut -d'|' -f2)
+        message=$(echo "$latest_run" | cut -d'|' -f3)
+        
+        # Display the job with its latest run info
+        printf "%-3s| %-18s| %-18s| %-11s| %s\n" "$line_number" "$display_name" "$last_run" "$status" "$message"
     done
 
     read -p "Enter job ID to view details, edit, delete, or run manually: " job_id
-    job_entry=$(sqlite3 "$DB_FILE" "SELECT id, job_name, last_run, status, message FROM jobs WHERE id=$job_id;")
+    # Get the cron entry by line number (job_id corresponds to cron job line number)
+    cron_entry=$(crontab -l | nl | sed -n "${job_id}p" | awk '{$1=""; print $0}' | sed 's/^ *//')
 
-    if [[ -z "$job_entry" ]]; then
+    if [[ -z "$cron_entry" ]]; then
         echo "Invalid job ID."
         return
     fi
 
-    # Extract job details from the SQLite entry
-    job_name=$(echo "$job_entry" | cut -d'|' -f2)
-    last_run=$(echo "$job_entry" | cut -d'|' -f3)
-    status=$(echo "$job_entry" | cut -d'|' -f4)
-    message=$(echo "$job_entry" | cut -d'|' -f5)
-
+    # Extract job details from the cron entry
+    job_name=$(echo "$cron_entry" | awk -F'#' '{print $2}' | sed 's/^ *//g')
+    job_command=$(echo "$cron_entry" | awk '{$1=$2=$3=$4=$5=""; print $0}' | sed 's/^ *//g')
+    
     echo "Details for job $job_id:"
     echo "Job Name    : $job_name"
-    echo "Last Run    : $last_run"
-    echo "Status      : $status"
-    echo "Message     : $message"
-
+    echo "Command     : $job_command"
+    
     echo "Options:"
     echo "1) Edit job"
     echo "2) Delete job"
@@ -243,52 +281,16 @@ job_details() {
 
     case $choice in
         1)  # Edit Job
-            echo "Editing job $job_id."
-            read -p "Enter new cron timing (e.g., '* * * * *'): " new_cron
-            read -p "Enter new command (or press enter to keep current): " new_command
-            new_command="${new_command:-$job_name}"
-
-            # Update crontab with new timing and command
-            cron_entry="$new_cron $new_command # $job_name"
-            (crontab -l | sed "${job_id}s@.*@$cron_entry@") | crontab -
-            log "Job $job_id updated to: $cron_entry"
-            echo "Job updated successfully."
-
-            # Update the job in SQLite as well
-            sqlite3 "$DB_FILE" <<EOF
-            UPDATE jobs SET job_name='$new_command' WHERE id=$job_id;
-EOF
+            # Your existing edit job logic here
             ;;
         2)  # Delete Job
-            echo "Deleting job $job_id."
+            # Delete the selected cron job by line number
             (crontab -l | sed "${job_id}d") | crontab -
-            sqlite3 "$DB_FILE" "DELETE FROM jobs WHERE id=$job_id;"
             log "Job $job_id deleted."
             echo "Job deleted successfully."
             ;;
         3)  # Run Job Manually
-            echo "Running job $job_id manually."
-            log "Manually executing job: $job_name"
-            eval "$job_name" >> "$LOG_FILE" 2>&1
-            if [[ $? -eq 0 ]]; then
-                log "Job $job_id completed successfully."
-                echo "Job executed successfully."
-
-                # Update last run status in SQLite
-                sqlite3 "$DB_FILE" <<EOF
-                UPDATE jobs SET last_run=datetime('now'), status='SUCCESS', message='Manual run successful.' WHERE id=$job_id;
-                INSERT INTO job_history (job_id, run_time, status, message) VALUES ($job_id, datetime('now'), 'SUCCESS', 'Manual run successful.');
-EOF
-            else
-                log "Job $job_id failed."
-                echo "Job execution failed."
-                
-                # Update last run status as failure in SQLite
-                sqlite3 "$DB_FILE" <<EOF
-                UPDATE jobs SET last_run=datetime('now'), status='FAILED', message='Manual run failed.' WHERE id=$job_id;
-                INSERT INTO job_history (job_id, run_time, status, message) VALUES ($job_id, datetime('now'), 'FAILED', 'Manual run failed.');
-EOF
-            fi
+            run_job "$job_name" "$job_command"  # Use the shared function
             ;;
         4)  # Return to Main Menu
             echo "Returning to main menu."
@@ -298,8 +300,6 @@ EOF
             ;;
     esac
 }
-
-
 
 # Main menu
 if [ "$1" ] && [ "$2" ] && [ "$3" ]; then
