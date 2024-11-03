@@ -100,3 +100,73 @@ Sat Nov  2 18:46:20 CDT 2024: Opening AutomationInProgress.txt in TextEdit
 Sat Nov  2 18:46:20 CDT 2024: Opening AutomationInProgress.txt in TextEdit
 Sat Nov  2 18:46:20 CDT 2024: Adding and committing changes to Git repository
 Sat Nov  2 18:46:20 CDT 2024: Adding and committing changes to Git repository
+[main 9090e45] latest log files for sampling
+ 3 files changed, 110 insertions(+), 65 deletions(-)
+Sat Nov  2 18:46:20 CDT 2024: Git commit completed. Logs available for inspection.
+Sat Nov  2 18:46:20 CDT 2024: Git commit completed. Logs available for inspection.
+Sat Nov  2 18:46:20 CDT 2024: Job 'Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1' completed successfully.
+Sat Nov  2 18:46:30 CDT 2024: Starting job: Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 18:46:30 CDT 2024: Starting initialization sequence with a 15-second delay.
+Sat Nov  2 18:46:30 CDT 2024: Starting initialization sequence with a 15-second delay.
+Sat Nov  2 18:46:45 CDT 2024: Starting OBS
+Sat Nov  2 18:46:45 CDT 2024: Starting OBS
+Sat Nov  2 18:46:50 CDT 2024: Starting Companion
+Sat Nov  2 18:46:50 CDT 2024: Starting Companion
+Sat Nov  2 18:47:05 CDT 2024: Starting Stream Deck
+Sat Nov  2 18:47:05 CDT 2024: Starting Stream Deck
+Sat Nov  2 18:47:05 CDT 2024: Opening Safari with specified URLs
+Sat Nov  2 18:47:05 CDT 2024: Opening Safari with specified URLs
+Sat Nov  2 18:47:05 CDT 2024: Running WrapperScript On.sh
+Sat Nov  2 18:47:05 CDT 2024: Running WrapperScript On.sh
+Sat Nov  2 18:47:06 CDT 2024: Running query.sh
+Sat Nov  2 18:47:06 CDT 2024: Running query.sh
+Sat Nov  2 18:47:06 CDT 2024: Job 'Saturday Init >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1' completed successfully.
+Sat Nov  2 19:18:55 CDT 2024: Starting job: Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 19:18:55 CDT 2024: Starting PTZControl SlideListener
+Sat Nov  2 19:18:55 CDT 2024: Starting PTZControl SlideListener
+node:events:505
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at Server.listen (node:net:1508:7)
+    at Function.listen (/Users/av/git/PTZControl/SlideListener/node_modules/express/lib/application.js:635:24)
+    at Object.<anonymous> (/Users/av/git/PTZControl/SlideListener/index.js:467:5)
+    at Module._compile (node:internal/modules/cjs/loader:1105:14)
+    at Object.Module._extensions..js (node:internal/modules/cjs/loader:1159:10)
+    at Module.load (node:internal/modules/cjs/loader:981:32)
+    at Function.Module._load (node:internal/modules/cjs/loader:822:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:77:12)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:1399:8)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+Sat Nov  2 19:19:00 CDT 2024: Running prep.sh equivalent
+Sat Nov  2 19:19:00 CDT 2024: Running prep.sh equivalent
+Sat Nov  2 19:19:00 CDT 2024: Job 'Saturday Listener >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1' completed successfully.
+Sat Nov  2 19:19:34 CDT 2024: Starting job: Saturday Teardown >> /Users/av/git/PTZControl/_Scheduled/scheduler.log 2>&1
+Sat Nov  2 19:19:34 CDT 2024: Running Off.sh equivalent
+Sat Nov  2 19:19:34 CDT 2024: Running Off.sh equivalent
+Sat Nov  2 19:19:39 CDT 2024: Terminating OBS
+Sat Nov  2 19:19:39 CDT 2024: Terminating OBS
+Sat Nov  2 19:19:39 CDT 2024: Terminating Companion
+Sat Nov  2 19:19:39 CDT 2024: Terminating Companion
+Sat Nov  2 19:19:39 CDT 2024: Companion terminated
+Sat Nov  2 19:19:39 CDT 2024: Companion terminated
+Sat Nov  2 19:19:39 CDT 2024: Terminating Safari
+Sat Nov  2 19:19:39 CDT 2024: Terminating Safari
+Sat Nov  2 19:19:39 CDT 2024: Safari terminated
+Sat Nov  2 19:19:39 CDT 2024: Safari terminated
+Sat Nov  2 19:19:40 CDT 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Nov  2 19:19:40 CDT 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Nov  2 19:20:10 CDT 2024: Opening AutomationInProgress.txt in TextEdit
+Sat Nov  2 19:20:10 CDT 2024: Opening AutomationInProgress.txt in TextEdit
+Sat Nov  2 19:20:10 CDT 2024: Adding and committing changes to Git repository
+Sat Nov  2 19:20:10 CDT 2024: Adding and committing changes to Git repository

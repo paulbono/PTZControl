@@ -17,7 +17,7 @@ sleep 5
 
 # Kill the apps we started
 log "Terminating OBS"
-pkill -f "OBS" && log "OBS terminated" || log "OBS was not running."
+open /Users/av/git/PTZControl/orderMac/shutdownOBS.sh
 
 log "Terminating Companion"
 pkill -f "Companion" && log "Companion terminated" || log "Companion was not running."
