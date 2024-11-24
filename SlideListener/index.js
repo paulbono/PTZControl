@@ -137,6 +137,8 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
             // Press welcome to Christ Pewaukee
             await pressBitCompanionButton(2, 2);
+            // Start Stream
+            await pressBitCompanionButton(1, 17);
             // turn on overlay
             await pressBitCompanionButton(2, 8);
             // Wait 60 Seconds
