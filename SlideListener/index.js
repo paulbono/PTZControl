@@ -134,11 +134,12 @@ app.post('/slide', async function (req, res) {
             // Wait 1 second
             await sleep(ONE_SECOND_IN_MS);
             await setPnp(OFF);
+
+            // Camera 7 - Show Slides to start
+            await pressBitCompanionButton(1, 5);
             await pressAuto();
             // Press welcome to Christ Pewaukee
             await pressBitCompanionButton(2, 2);
-            // Start Stream
-            await pressBitCompanionButton(1, 17);
             // turn on overlay
             await pressBitCompanionButton(2, 8);
             // Wait 60 Seconds

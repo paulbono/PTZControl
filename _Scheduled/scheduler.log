@@ -3245,3 +3245,958 @@ Wed Nov 27 13:46:49 CST 2024: Safari terminated
 Wed Nov 27 13:46:49 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
 Wed Nov 27 13:47:19 CST 2024: Opening AutomationInProgress.txt in TextEdit
 Wed Nov 27 13:47:19 CST 2024: Adding and committing changes to Git repository
+[main e284855] latest log files for sampling
+ 1 file changed, 724 insertions(+)
+Wed Nov 27 13:47:19 CST 2024: Git commit completed. Logs available for inspection.
+{ tag: '[Start]' }
+node:events:505
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: connect ECONNREFUSED 127.0.0.1:8888
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1187:16)
+Emitted 'error' event on ClientRequest instance at:
+    at Socket.socketErrorListener (node:_http_client:454:9)
+    at Socket.emit (node:events:527:28)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  errno: -61,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 8888
+}
+Sat Nov 30 15:30:00 CST 2024: Starting initialization sequence with a 15-second delay.
+Sat Nov 30 15:30:16 CST 2024: Starting OBS
+Sat Nov 30 15:30:21 CST 2024: Starting Companion
+Sat Nov 30 15:30:36 CST 2024: Starting Stream Deck
+Sat Nov 30 15:30:36 CST 2024: Opening Safari with specified URLs
+Sat Nov 30 15:30:36 CST 2024: Running WrapperScript On.sh
+Sat Nov 30 15:30:37 CST 2024: Running query.sh
+Sat Nov 30 16:18:53 CST 2024: Starting PTZControl SlideListener
+Status 200
+Status 200
+Status 200
+Status 200
+Sat Nov 30 16:18:58 CST 2024: Running prep.sh equivalent
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+{ tag: '[Baptism]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'baptism' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Silent prayer]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+{ tag: '[Start]' }
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+{ tag: '[Start]' }
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+{ tag: '[Start]' }
+Status 200
+Status 200
+Status 200
+Status 200
+Sat Nov 30 16:59:01 CST 2024: Starting startStream.sh
+{ tag: '[Begin Program]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Silent prayer]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+{ tag: '[Announcements]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+{ tag: '[Call To Worship]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Worship Hymn]' }
+Status 200
+Status 200
+Status 200
+{ tag: '[Old Testament]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'pulpit_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+{ tag: '[Old Testament]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'pulpit_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+{ tag: '[Sermon Hymn]' }
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Sermon Text Krause]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'pulpit_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+{ tag: '[Pulpit]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'pulpit_center' }
+camera  main
+Status 200
+Status 200
+Status 200
+{ tag: '[Creed]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'pulpit_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+{ tag: '[Prayer]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'altar_center' }
+camera  alt
+Status 200
+Status 200
+Status 200
+{ tag: '[Lords Prayer]' }
+Status 200
+Status 200
+Status 200
+{ tag: '[Institution]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'altar_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Distribution]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[End of Distribution]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'altar_center_pnp' }
+camera  main
+Status 200
+Status 200
+Status 200
+Status 200
+{ tag: '[Closing Hymn]' }
+Status 200
+Status 200
+Status 200
+{ tag: '[Silent Prayer]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+Status 200
+{ tag: '[Announcements]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Announcements]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Announcements]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Announcements]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'worship_center' }
+camera  main
+Status 200
+Status 200
+{ tag: '[Thank You For Worshipping]' }
+ptz_data  {
+  main: {
+    ip: '10.0.0.132',
+    worship_center: { zoom: '2DD4', pan: 'FBAF', tilt: 'FFC6', focus: '0209' },
+    worship_center_pnp: { zoom: '2DDB', pan: 'FB88', tilt: 'FFCE', focus: '0209' },
+    pulpit_center: { zoom: '3608', pan: 'FC68', tilt: 'FFE8', focus: '0236' },
+    pulpit_center_pnp: { zoom: '2DD1', pan: 'FC3A', tilt: 'FFE8', focus: '020A' },
+    sermon_center: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' },
+    sermon_center_pnp: { zoom: '2DD8', pan: 'FBA4', tilt: 'FFDD', focus: '0208' },
+    altar_center: { zoom: '33CB', pan: 'FBE3', tilt: 'FFEA', focus: '01EA' },
+    altar_center_pnp: { zoom: '33CB', pan: 'FBCB', tilt: 'FFEA', focus: '01ED' },
+    wide: { zoom: '0000', pan: 'FBE1', tilt: 'FFCF', focus: '067F' },
+    baptism: { zoom: '2DF3', pan: 'FB5C', tilt: 'FFD4', focus: '0207' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '2DD8', pan: 'FBDB', tilt: 'FFDD', focus: '0209' }
+  },
+  alt: {
+    ip: '10.0.0.154',
+    worship_center: { zoom: '361A', pan: '0008', tilt: 'FFC0', focus: '023E' },
+    worship_center_pnp: { zoom: '32FF', pan: 'FFDE', tilt: 'FFB4', focus: '01ED' },
+    pulpit_center: { zoom: '34B4', pan: '00DB', tilt: 'FFD3', focus: '020C' },
+    pulpit_center_pnp: { zoom: '362C', pan: '00CB', tilt: 'FFD0', focus: '0247' },
+    sermon_center: { zoom: '2E8B', pan: '0032', tilt: 'FFCD', focus: '0205' },
+    sermon_center_pnp: { zoom: '2E8B', pan: '0003', tilt: 'FFCD', focus: '0205' },
+    altar_center: { zoom: '363F', pan: '007D', tilt: 'FFDB', focus: '024D' },
+    altar_center_pnp: { zoom: '3642', pan: '0073', tilt: 'FFD5', focus: '024D' },
+    wide: { pan: '0000', tilt: '0000', zoom: '0000', focus: '068D' },
+    soloist: { zoom: '3728', pan: 'FF0B', tilt: 'FFCA', focus: '0288' },
+    goodnight: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    current_pos: { zoom: '0000', pan: '0990', tilt: 'FE50', focus: '0677' },
+    krause_mid_pulpit: { zoom: '34AE', pan: '00B4', tilt: 'FFC9', focus: '020A' }
+  }
+}
+args  { preset: 'wide' }
+camera  alt
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Status 200
+Sat Nov 30 18:15:00 CST 2024: Running Off.sh equivalent
+Sat Nov 30 18:15:06 CST 2024: Terminating OBS
+Sat Nov 30 18:15:06 CST 2024: Terminating Companion
+Sat Nov 30 18:15:06 CST 2024: Companion terminated
+Sat Nov 30 18:15:06 CST 2024: Terminating Safari
+Sat Nov 30 18:15:06 CST 2024: Safari terminated
+Sat Nov 30 18:15:06 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Nov 30 18:15:36 CST 2024: Opening AutomationInProgress.txt in TextEdit
+Sat Nov 30 18:15:36 CST 2024: Adding and committing changes to Git repository
