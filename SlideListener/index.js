@@ -125,6 +125,7 @@ app.post('/slide', async function (req, res) {
             await pressAuto();
             break;
         case "[Begin Program]":
+            ///INIT STEPS
             // Point Camera 5
             camera.send_commands(ptzData, {"preset": "worship_center"}, MAIN);
             // Point Camera 6
@@ -135,13 +136,25 @@ app.post('/slide', async function (req, res) {
             await sleep(ONE_SECOND_IN_MS);
             await setPnp(OFF);
 
+            ///PREP FIRST SCENE
             // Camera 7 - Show Slides to start
             await pressBitCompanionButton(1, 5);
             await pressAuto();
-            // Press welcome to Christ Pewaukee
+\            // Toggle Stream (START STREAM HOPEFULLY)
+            await pressBitCompanionButton(1, 16);
+            // Wait 15 Seconds
+            await sleep(FIFTEEN_SECONDS_IN_MS);
+            
+            ///SHOW WIDE CHURCH SHOT
+            // Camera 6
+            await pressBitCompanionButton(1, 4);
+            // Press welcome to Christ Pewaukee Overlay Slide
             await pressBitCompanionButton(2, 2);
             // turn on overlay
             await pressBitCompanionButton(2, 8);
+            await pressAuto();
+
+            ///SHOW PASTOR FOCUS
             // Wait 60 Seconds
             await sleep(ONE_MINUTE_IN_MS);
             // Turn off overlay

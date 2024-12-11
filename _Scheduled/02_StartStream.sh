@@ -10,4 +10,4 @@ log() {
 
 # Start streaming script
 log "Starting startStream.sh"
-open /Users/av/git/PTZControl/WrapperScriptMac/startStream.sh >> "$LOG_FILE" 2>&1 || log "startStream.sh not found. Verify path."
+open /Users/av/git/PTZControl/WrapperScriptMac/startStream.sh
