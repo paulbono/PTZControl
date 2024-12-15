@@ -140,7 +140,7 @@ app.post('/slide', async function (req, res) {
             // Camera 7 - Show Slides to start
             await pressBitCompanionButton(1, 5);
             await pressAuto();
-\            // Toggle Stream (START STREAM HOPEFULLY)
+            // Toggle Stream (START STREAM HOPEFULLY)
             await pressBitCompanionButton(1, 16);
             // Wait 15 Seconds
             await sleep(FIFTEEN_SECONDS_IN_MS);
