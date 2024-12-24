@@ -6083,3 +6083,23 @@ Sat Dec 21 18:15:06 CST 2024: Safari terminated
 Sat Dec 21 18:15:06 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Dec 21 18:15:36 CST 2024: Opening AutomationInProgress.txt in TextEdit
 Sat Dec 21 18:15:37 CST 2024: Adding and committing changes to Git repository
+[main 6db7aa9] latest log files for sampling
+ 1 file changed, 23 insertions(+)
+Sat Dec 21 18:15:37 CST 2024: Git commit completed. Logs available for inspection.
+Tue Dec 24 12:20:43 CST 2024: Starting initialization sequence with a 15-second delay.
+Tue Dec 24 12:20:58 CST 2024: Starting OBS
+Tue Dec 24 12:21:03 CST 2024: Starting Companion
+Tue Dec 24 12:21:18 CST 2024: Starting Stream Deck
+Tue Dec 24 12:21:18 CST 2024: Opening Safari with specified URLs
+Tue Dec 24 12:21:18 CST 2024: Running WrapperScript On.sh
+Tue Dec 24 12:21:18 CST 2024: Running query.sh
+Tue Dec 24 12:21:54 CST 2024: Starting PTZControl SlideListener
+Tue Dec 24 17:29:43 CST 2024: Running Off.sh equivalent
+Tue Dec 24 17:29:48 CST 2024: Terminating OBS
+Tue Dec 24 17:29:48 CST 2024: Terminating Companion
+Tue Dec 24 17:29:48 CST 2024: Companion terminated
+Tue Dec 24 17:29:48 CST 2024: Terminating Safari
+Tue Dec 24 17:29:48 CST 2024: Safari terminated
+Tue Dec 24 17:29:48 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Tue Dec 24 17:30:18 CST 2024: Opening AutomationInProgress.txt in TextEdit
+Tue Dec 24 17:30:18 CST 2024: Adding and committing changes to Git repository
