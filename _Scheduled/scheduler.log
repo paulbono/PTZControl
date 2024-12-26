@@ -6103,3 +6103,30 @@ Tue Dec 24 17:29:48 CST 2024: Safari terminated
 Tue Dec 24 17:29:48 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
 Tue Dec 24 17:30:18 CST 2024: Opening AutomationInProgress.txt in TextEdit
 Tue Dec 24 17:30:18 CST 2024: Adding and committing changes to Git repository
+[main 60f9998] latest log files for sampling
+ 2 files changed, 20 insertions(+)
+Tue Dec 24 17:30:18 CST 2024: Git commit completed. Logs available for inspection.
+Wed Dec 25 09:23:19 CST 2024: Starting initialization sequence with a 15-second delay.
+Wed Dec 25 09:23:34 CST 2024: Starting OBS
+Wed Dec 25 09:23:39 CST 2024: Starting Companion
+Wed Dec 25 09:23:54 CST 2024: Starting Stream Deck
+Wed Dec 25 09:23:54 CST 2024: Opening Safari with specified URLs
+Wed Dec 25 09:23:54 CST 2024: Running WrapperScript On.sh
+Wed Dec 25 09:23:55 CST 2024: Running query.sh
+Wed Dec 25 09:25:14 CST 2024: Running prep.sh equivalent
+Wed Dec 25 09:25:14 CST 2024: Running prep.sh equivalent
+Wed Dec 25 09:25:14 CST 2024: Starting PTZControl SlideListener
+Wed Dec 25 09:25:32 CST 2024: Starting PTZControl SlideListener
+Wed Dec 25 09:25:53 CST 2024: Running prep.sh equivalent
+Wed Dec 25 09:25:53 CST 2024: Running prep.sh equivalent
+Wed Dec 25 09:25:53 CST 2024: Starting PTZControl SlideListener
+Wed Dec 25 09:29:02 CST 2024: Starting startStream.sh
+Thu Dec 26 15:42:10 CST 2024: Running Off.sh equivalent
+Thu Dec 26 15:42:15 CST 2024: Terminating OBS
+Thu Dec 26 15:42:15 CST 2024: Terminating Companion
+Thu Dec 26 15:42:15 CST 2024: Companion terminated
+Thu Dec 26 15:42:15 CST 2024: Terminating Safari
+Thu Dec 26 15:42:15 CST 2024: Safari terminated
+Thu Dec 26 15:42:15 CST 2024: Waiting 30 seconds before opening AutomationInProgress.txt
+Thu Dec 26 15:42:45 CST 2024: Opening AutomationInProgress.txt in TextEdit
+Thu Dec 26 15:42:45 CST 2024: Adding and committing changes to Git repository
