@@ -6210,3 +6210,26 @@ Thu Jan  2 11:00:43 CST 2025: Safari terminated
 Thu Jan  2 11:00:43 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Thu Jan  2 11:01:13 CST 2025: Opening AutomationInProgress.txt in TextEdit
 Thu Jan  2 11:01:13 CST 2025: Adding and committing changes to Git repository
+[main e184d9f] latest log files for sampling
+ 2 files changed, 22 insertions(+)
+Thu Jan  2 11:01:13 CST 2025: Git commit completed. Logs available for inspection.
+Sat Jan  4 15:30:00 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan  4 15:30:15 CST 2025: Starting OBS
+Sat Jan  4 15:30:21 CST 2025: Starting Companion
+Sat Jan  4 15:30:36 CST 2025: Starting Stream Deck
+Sat Jan  4 15:30:36 CST 2025: Opening Safari with specified URLs
+Sat Jan  4 15:30:36 CST 2025: Running WrapperScript On.sh
+Sat Jan  4 15:30:37 CST 2025: Running query.sh
+Sat Jan  4 16:58:00 CST 2025: Running prep.sh equivalent
+Sat Jan  4 16:58:00 CST 2025: Running prep.sh equivalent
+Sat Jan  4 16:58:00 CST 2025: Starting PTZControl SlideListener
+Sat Jan  4 16:59:00 CST 2025: Starting startStream.sh
+Sat Jan  4 18:15:01 CST 2025: Running Off.sh equivalent
+Sat Jan  4 18:15:06 CST 2025: Terminating OBS
+Sat Jan  4 18:15:06 CST 2025: Terminating Companion
+Sat Jan  4 18:15:06 CST 2025: Companion terminated
+Sat Jan  4 18:15:06 CST 2025: Terminating Safari
+Sat Jan  4 18:15:07 CST 2025: Safari terminated
+Sat Jan  4 18:15:07 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Jan  4 18:15:37 CST 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Jan  4 18:15:37 CST 2025: Adding and committing changes to Git repository
