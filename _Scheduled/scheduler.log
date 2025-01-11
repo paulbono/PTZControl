@@ -6233,3 +6233,38 @@ Sat Jan  4 18:15:07 CST 2025: Safari terminated
 Sat Jan  4 18:15:07 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Jan  4 18:15:37 CST 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Jan  4 18:15:37 CST 2025: Adding and committing changes to Git repository
+[main 6d015b7] latest log files for sampling
+ 2 files changed, 23 insertions(+)
+Sat Jan  4 18:15:37 CST 2025: Git commit completed. Logs available for inspection.
+Sat Jan 11 10:11:40 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan 11 10:11:55 CST 2025: Starting OBS
+Sat Jan 11 10:12:01 CST 2025: Starting Companion
+Sat Jan 11 10:12:16 CST 2025: Starting Stream Deck
+Sat Jan 11 10:12:17 CST 2025: Opening Safari with specified URLs
+Sat Jan 11 10:12:17 CST 2025: Running WrapperScript On.sh
+Sat Jan 11 10:12:18 CST 2025: Running query.sh
+Sat Jan 11 11:05:50 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:05:50 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:05:50 CST 2025: Starting PTZControl SlideListener
+Sat Jan 11 11:06:22 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan 11 11:06:37 CST 2025: Starting OBS
+Sat Jan 11 11:06:43 CST 2025: Starting Companion
+Sat Jan 11 11:06:58 CST 2025: Starting Stream Deck
+Sat Jan 11 11:06:58 CST 2025: Opening Safari with specified URLs
+Sat Jan 11 11:06:58 CST 2025: Running WrapperScript On.sh
+Sat Jan 11 11:06:58 CST 2025: Running query.sh
+Sat Jan 11 11:07:33 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:07:33 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:07:33 CST 2025: Starting PTZControl SlideListener
+Sat Jan 11 11:11:02 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:11:02 CST 2025: Running prep.sh equivalent
+Sat Jan 11 11:11:02 CST 2025: Starting PTZControl SlideListener
+Sat Jan 11 11:14:52 CST 2025: Running Off.sh equivalent
+Sat Jan 11 11:14:57 CST 2025: Terminating OBS
+Sat Jan 11 11:14:57 CST 2025: Terminating Companion
+Sat Jan 11 11:14:57 CST 2025: Companion terminated
+Sat Jan 11 11:14:57 CST 2025: Terminating Safari
+Sat Jan 11 11:14:57 CST 2025: Safari terminated
+Sat Jan 11 11:14:57 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Jan 11 11:15:27 CST 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Jan 11 11:15:27 CST 2025: Adding and committing changes to Git repository
