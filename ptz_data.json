@@ -72,6 +72,12 @@
             "pan": "FBDB",
             "tilt": "FFDD",
             "focus": "0209"
+        },
+        "center_full": {
+            "zoom": "1085",
+            "pan": "FBF5",
+            "tilt": "0000",
+            "focus": "0539"
         }
     },
     "alt": {

@@ -459,6 +459,16 @@ app.post('/slide', async function (req, res) {
             await setPnp(OFF);
             await pressAuto();
             break;
+        case "[Center Full]":
+            // Point Camera 5
+            camera.send_commands(ptzData, {"preset": "center_full"}, MAIN);
+            // Camera 5
+            await pressBitCompanionButton(1, 3);
+            // Wait 1 second
+            await sleep(ONE_SECOND_IN_MS);
+            await setPnp(OFF);
+            await pressAuto();
+            break;
         default:
             console.log("Don't know this tag");
     }
