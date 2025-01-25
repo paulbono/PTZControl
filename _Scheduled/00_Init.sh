@@ -31,7 +31,7 @@ open -a "/Applications/Elgato Stream Deck.app" >> "$LOG_FILE" 2>&1 || log "Strea
 
 log "Opening Safari with specified URLs"
 open -na "/Applications/Safari.app" "http://10.0.0.132" >> "$LOG_FILE" 2>&1
-open -na "/Applications/Safari.app" "http://10.0.0.154" >> "$LOG_FILE" 2>&1
+open -na "/Applications/Safari.app" "http://10.0.0.95" >> "$LOG_FILE" 2>&1
 
 # Run WrapperScript On.sh
 log "Running WrapperScript On.sh"
