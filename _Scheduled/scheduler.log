@@ -6337,3 +6337,47 @@ Sun Jan 19 16:42:09 CST 2025: Safari terminated
 Sun Jan 19 16:42:09 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sun Jan 19 16:42:39 CST 2025: Opening AutomationInProgress.txt in TextEdit
 Sun Jan 19 16:42:39 CST 2025: Adding and committing changes to Git repository
+[main 5be6608] latest log files for sampling
+ 3 files changed, 23 insertions(+)
+ create mode 100644 EmergencyMac/.DS_Store
+Sun Jan 19 16:42:39 CST 2025: Git commit completed. Logs available for inspection.
+Sat Jan 25 15:30:01 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan 25 15:30:16 CST 2025: Starting OBS
+Sat Jan 25 15:30:21 CST 2025: Starting Companion
+Sat Jan 25 15:30:36 CST 2025: Starting Stream Deck
+Sat Jan 25 15:30:36 CST 2025: Opening Safari with specified URLs
+Sat Jan 25 15:30:36 CST 2025: Running WrapperScript On.sh
+Sat Jan 25 15:30:37 CST 2025: Running query.sh
+Sat Jan 25 16:31:29 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan 25 16:31:44 CST 2025: Starting OBS
+Sat Jan 25 16:31:49 CST 2025: Starting Companion
+Sat Jan 25 16:32:04 CST 2025: Starting Stream Deck
+Sat Jan 25 16:32:04 CST 2025: Opening Safari with specified URLs
+Sat Jan 25 16:32:05 CST 2025: Running WrapperScript On.sh
+Sat Jan 25 16:32:05 CST 2025: Running query.sh
+Sat Jan 25 16:33:46 CST 2025: Running prep.sh equivalent
+Sat Jan 25 16:33:46 CST 2025: Running prep.sh equivalent
+Sat Jan 25 16:33:46 CST 2025: Starting PTZControl SlideListener
+Sat Jan 25 16:54:33 CST 2025: Starting initialization sequence with a 15-second delay.
+Sat Jan 25 16:54:48 CST 2025: Starting OBS
+Sat Jan 25 16:54:53 CST 2025: Starting Companion
+Sat Jan 25 16:55:08 CST 2025: Starting Stream Deck
+Sat Jan 25 16:55:08 CST 2025: Opening Safari with specified URLs
+Sat Jan 25 16:55:08 CST 2025: Running WrapperScript On.sh
+Sat Jan 25 16:55:08 CST 2025: Running query.sh
+Sat Jan 25 16:58:00 CST 2025: Running prep.sh equivalent
+Sat Jan 25 16:58:00 CST 2025: Running prep.sh equivalent
+Sat Jan 25 16:58:00 CST 2025: Starting PTZControl SlideListener
+Sat Jan 25 16:59:01 CST 2025: Starting startStream.sh
+Sat Jan 25 17:19:47 CST 2025: Running prep.sh equivalent
+Sat Jan 25 17:19:47 CST 2025: Running prep.sh equivalent
+Sat Jan 25 17:19:47 CST 2025: Starting PTZControl SlideListener
+Sat Jan 25 18:15:00 CST 2025: Running Off.sh equivalent
+Sat Jan 25 18:15:05 CST 2025: Terminating OBS
+Sat Jan 25 18:15:05 CST 2025: Terminating Companion
+Sat Jan 25 18:15:05 CST 2025: Companion terminated
+Sat Jan 25 18:15:05 CST 2025: Terminating Safari
+Sat Jan 25 18:15:06 CST 2025: Safari terminated
+Sat Jan 25 18:15:06 CST 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Jan 25 18:15:36 CST 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Jan 25 18:15:36 CST 2025: Adding and committing changes to Git repository
