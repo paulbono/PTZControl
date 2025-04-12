@@ -6782,3 +6782,62 @@ Sat Apr  5 18:15:07 CDT 2025: Safari terminated
 Sat Apr  5 18:15:07 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Apr  5 18:15:37 CDT 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Apr  5 18:15:37 CDT 2025: Adding and committing changes to Git repository
+[main 8ad2469] latest log files for sampling
+ 2 files changed, 35 insertions(+)
+Sat Apr  5 18:15:38 CDT 2025: Git commit completed. Logs available for inspection.
+Sun Apr  6 07:55:08 CDT 2025: Starting initialization sequence with a 15-second delay.
+Sun Apr  6 07:55:23 CDT 2025: Starting OBS
+Sun Apr  6 07:55:29 CDT 2025: Starting Companion
+Sun Apr  6 07:55:34 CDT 2025: Running prep.sh equivalent
+Sun Apr  6 07:55:34 CDT 2025: Running prep.sh equivalent
+Sun Apr  6 07:55:34 CDT 2025: Starting PTZControl SlideListener
+Sun Apr  6 07:55:39 CDT 2025: Starting PTZControl SlideListener
+Sun Apr  6 07:55:44 CDT 2025: Starting Stream Deck
+Sun Apr  6 07:55:44 CDT 2025: Opening Safari with specified URLs
+Sun Apr  6 07:55:44 CDT 2025: Running WrapperScript On.sh
+Sun Apr  6 07:55:44 CDT 2025: Running query.sh
+Sun Apr  6 07:58:59 CDT 2025: Starting startStream.sh
+Wed Apr  9 11:51:05 CDT 2025: Starting initialization sequence with a 15-second delay.
+Wed Apr  9 11:51:20 CDT 2025: Starting OBS
+Wed Apr  9 11:51:26 CDT 2025: Starting Companion
+Wed Apr  9 11:51:41 CDT 2025: Starting Stream Deck
+Wed Apr  9 11:51:41 CDT 2025: Opening Safari with specified URLs
+Wed Apr  9 11:51:41 CDT 2025: Running WrapperScript On.sh
+Wed Apr  9 11:51:41 CDT 2025: Running query.sh
+Wed Apr  9 11:51:43 CDT 2025: Running prep.sh equivalent
+Wed Apr  9 11:51:43 CDT 2025: Running prep.sh equivalent
+Wed Apr  9 11:51:43 CDT 2025: Starting PTZControl SlideListener
+Wed Apr  9 11:51:46 CDT 2025: Starting PTZControl SlideListener
+Wed Apr  9 11:58:38 CDT 2025: Starting startStream.sh
+Sat Apr 12 15:30:00 CDT 2025: Starting initialization sequence with a 15-second delay.
+Sat Apr 12 15:30:16 CDT 2025: Starting OBS
+Sat Apr 12 15:30:21 CDT 2025: Starting Companion
+Sat Apr 12 15:30:36 CDT 2025: Starting Stream Deck
+Sat Apr 12 15:30:36 CDT 2025: Opening Safari with specified URLs
+Sat Apr 12 15:30:36 CDT 2025: Running WrapperScript On.sh
+Sat Apr 12 15:30:38 CDT 2025: Running query.sh
+Sat Apr 12 16:58:00 CDT 2025: Running prep.sh equivalent
+Sat Apr 12 16:58:00 CDT 2025: Running prep.sh equivalent
+Sat Apr 12 16:58:00 CDT 2025: Starting PTZControl SlideListener
+Sat Apr 12 16:59:00 CDT 2025: Starting startStream.sh
+Sat Apr 12 17:02:45 CDT 2025: Starting initialization sequence with a 15-second delay.
+Sat Apr 12 17:03:00 CDT 2025: Starting OBS
+Sat Apr 12 17:03:05 CDT 2025: Starting Companion
+Sat Apr 12 17:03:20 CDT 2025: Starting Stream Deck
+Sat Apr 12 17:03:20 CDT 2025: Opening Safari with specified URLs
+Sat Apr 12 17:03:21 CDT 2025: Running WrapperScript On.sh
+Sat Apr 12 17:03:22 CDT 2025: Running query.sh
+Sat Apr 12 17:03:47 CDT 2025: Running prep.sh equivalent
+Sat Apr 12 17:03:47 CDT 2025: Running prep.sh equivalent
+Sat Apr 12 17:03:47 CDT 2025: Starting PTZControl SlideListener
+Sat Apr 12 17:03:54 CDT 2025: Starting PTZControl SlideListener
+Sat Apr 12 17:04:00 CDT 2025: Starting startStream.sh
+Sat Apr 12 18:15:01 CDT 2025: Running Off.sh equivalent
+Sat Apr 12 18:15:06 CDT 2025: Terminating OBS
+Sat Apr 12 18:15:06 CDT 2025: Terminating Companion
+Sat Apr 12 18:15:06 CDT 2025: Companion terminated
+Sat Apr 12 18:15:06 CDT 2025: Terminating Safari
+Sat Apr 12 18:15:07 CDT 2025: Safari terminated
+Sat Apr 12 18:15:07 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Apr 12 18:15:37 CDT 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Apr 12 18:15:37 CDT 2025: Adding and committing changes to Git repository
