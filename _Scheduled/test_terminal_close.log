@@ -30,3 +30,12 @@ Sat Apr 26 10:29:08 CDT 2025: AppleScript executed — other Terminal windows sh
 Sat Apr 26 10:29:08 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Apr 26 10:29:38 CDT 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Apr 26 10:29:38 CDT 2025: Adding and committing changes to Git repository
+[main 64f5727] latest log files for sampling
+ 5 files changed, 24 insertions(+), 1 deletion(-)
+ create mode 100755 WrapperScriptMac/Off2.sh
+Sat Apr 26 10:29:38 CDT 2025: Git commit completed. Logs available for inspection.
+Sat Apr 26 10:32:03 CDT 2025: Starting test: Closing other Terminal windows (except current one)
+Sat Apr 26 10:32:04 CDT 2025: AppleScript executed — other Terminal windows should now be closed.
+Sat Apr 26 10:32:04 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Apr 26 10:32:34 CDT 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Apr 26 10:32:34 CDT 2025: Adding and committing changes to Git repository

@@ -13,7 +13,7 @@ start "I'm Running..." "C:\Program Files\Companion\Companion.exe"
 timeout 15
 start "I'm Running..." "C:\Program Files\Elgato\StreamDeck\StreamDeck.exe"
 start "I'm Running..." "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --profile-directory="Profile 1" http://10.0.0.132/ -incognito
-start "I'm Running..." "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --profile-directory="Profile 1" http://10.0.0.154/ -incognito
+start "I'm Running..." "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --profile-directory="Profile 1" http://10.0.0.95/ -incognito
 start "I'm Running..." "C:\Users\User\Desktop\PTZControl\WrapperScript\On.bat"
 start "I'm Running..." "C:\Users\User\Desktop\query.bat"
 start "I'm Running..." node PTZControl\SlideListener\index.js
