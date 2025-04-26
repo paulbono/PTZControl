@@ -11,3 +11,14 @@ Sat Apr 26 10:25:52 CDT 2025: AppleScript executed — other Terminal windows sh
 Sat Apr 26 10:25:52 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Apr 26 10:26:22 CDT 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Apr 26 10:26:22 CDT 2025: Adding and committing changes to Git repository
+[main 68ae4b3] latest log files for sampling
+ 5 files changed, 87 insertions(+)
+ create mode 100644 _Scheduled/04_eStop.sh
+ create mode 100755 _Scheduled/05_stopTerminal.sh
+ create mode 100644 _Scheduled/test_terminal_close.log
+Sat Apr 26 10:26:22 CDT 2025: Git commit completed. Logs available for inspection.
+Sat Apr 26 10:26:47 CDT 2025: Starting test: Closing other Terminal windows (except current one)
+Sat Apr 26 10:26:48 CDT 2025: AppleScript executed — other Terminal windows should now be closed.
+Sat Apr 26 10:26:48 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
+Sat Apr 26 10:27:18 CDT 2025: Opening AutomationInProgress.txt in TextEdit
+Sat Apr 26 10:27:18 CDT 2025: Adding and committing changes to Git repository
