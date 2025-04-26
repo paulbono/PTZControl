@@ -1,15 +1,6 @@
 #!/bin/bash
 
-# Get the absolute path to the notify_terminal.sh script
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-NOTIFY_SCRIPT="$SCRIPT_DIR/notify_terminal.sh"
-
-# Full path to Terminal app (avoiding open -a)
-TERMINAL_PATH="/System/Applications/Utilities/Terminal.app/Contents/MacOS/Terminal"
-
-# Run Terminal with the notify script as arguments
-"$TERMINAL_PATH" -e "$NOTIFY_SCRIPT" "Setup Stream" "Setting up the stream..."
-
+open -a Terminal "./notify_terminal.sh" "Setup Stream" "Setting up stream..."
 
 # Log file path
 LOG_FILE="/Users/av/git/PTZControl/_Scheduled/scheduler.log"

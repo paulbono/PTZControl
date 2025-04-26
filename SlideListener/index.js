@@ -444,6 +444,10 @@ app.post('/slide', async function (req, res) {
             // Stop Stream
             await pressBitCompanionButton(1, 16);
             break;
+        case "[Stop Stream]":
+            // Stop Stream
+            await pressBitCompanionButton(1, 16);
+            break;
         case "[Sanctuary Special]":
             // Point Camera 6
             camera.send_commands(ptzData, {"preset": "wide"}, ALT);

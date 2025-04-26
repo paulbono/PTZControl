@@ -63,3 +63,8 @@ Sat Apr 26 10:54:09 CDT 2025: AppleScript executed — other Terminal windows sh
 Sat Apr 26 10:54:09 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Apr 26 10:54:39 CDT 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Apr 26 10:54:39 CDT 2025: Adding and committing changes to Git repository
+[main 9cf13c3] latest log files for sampling
+ 6 files changed, 94 insertions(+)
+ create mode 100755 _Scheduled/notify_terminal.sh
+ create mode 100755 _Scheduled/temp_notify.sh
+Sat Apr 26 10:54:39 CDT 2025: Git commit completed. Logs available for inspection.
