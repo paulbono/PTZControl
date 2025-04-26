@@ -11,6 +11,7 @@ log() {
 # Run Off.sh equivalent script
 log "Running Off.sh equivalent"
 open /Users/av/git/PTZControl/WrapperScriptMac/Off.sh >> "$LOG_FILE" 2>&1 || log "Off.sh not found. Verify path."
+open /Users/av/git/PTZControl/WrapperScriptMac/Off2.sh >> "$LOG_FILE" 2>&1 || log "Off2.sh not found. Verify path."
 
 # Wait 5 seconds
 sleep 5
