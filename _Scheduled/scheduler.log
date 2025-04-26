@@ -7081,3 +7081,21 @@ Sat Apr 26 10:12:28 CDT 2025: Safari terminated
 Sat Apr 26 10:12:28 CDT 2025: Waiting 30 seconds before opening AutomationInProgress.txt
 Sat Apr 26 10:12:58 CDT 2025: Opening AutomationInProgress.txt in TextEdit
 Sat Apr 26 10:12:58 CDT 2025: Adding and committing changes to Git repository
+[main b9917bb] latest log files for sampling
+ 4 files changed, 110 insertions(+)
+ create mode 100644 _Scheduled/.DS_Store
+Sat Apr 26 10:12:58 CDT 2025: Git commit completed. Logs available for inspection.
+Sat Apr 26 10:22:06 CDT 2025: Starting initialization sequence with a 15-second delay.
+Sat Apr 26 10:22:21 CDT 2025: Starting OBS
+Sat Apr 26 10:22:26 CDT 2025: Starting Companion
+Sat Apr 26 10:22:41 CDT 2025: Starting Stream Deck
+Sat Apr 26 10:22:41 CDT 2025: Opening Safari with specified URLs
+Sat Apr 26 10:22:41 CDT 2025: Running WrapperScript On.sh
+Sat Apr 26 10:22:41 CDT 2025: Running query.sh
+Sat Apr 26 10:25:11 CDT 2025: Starting PTZControl SlideListener
+Sat Apr 26 10:25:42 CDT 2025: Running Off.sh equivalent
+Sat Apr 26 10:25:47 CDT 2025: Terminating OBS
+Sat Apr 26 10:25:47 CDT 2025: Terminating Companion
+Sat Apr 26 10:25:47 CDT 2025: Companion terminated
+Sat Apr 26 10:25:48 CDT 2025: Terminating Safari
+Sat Apr 26 10:25:48 CDT 2025: Safari terminated
