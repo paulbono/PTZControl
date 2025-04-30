@@ -104,3 +104,18 @@ Sat Apr 26 18:15:06 CDT 2025: Terminating Companion
 Sat Apr 26 18:15:06 CDT 2025: Companion terminated
 Sat Apr 26 18:15:06 CDT 2025: Terminating Safari
 Sat Apr 26 18:15:06 CDT 2025: Safari terminated
+Wed Apr 30 11:00:49 CDT 2025: Starting initialization sequence with a 15-second delay.
+Wed Apr 30 11:01:04 CDT 2025: Starting OBS
+Wed Apr 30 11:01:09 CDT 2025: Starting Companion
+Wed Apr 30 11:01:24 CDT 2025: Starting Stream Deck
+Wed Apr 30 11:01:24 CDT 2025: Opening Safari with specified URLs
+Wed Apr 30 11:01:25 CDT 2025: Running WrapperScript On.sh
+Wed Apr 30 11:01:25 CDT 2025: Running query.sh
+Wed Apr 30 11:01:54 CDT 2025: Starting PTZControl SlideListener
+Wed Apr 30 11:58:21 CDT 2025: Starting startStream.sh
+Wed Apr 30 12:50:52 CDT 2025: Running Off.sh equivalent
+Wed Apr 30 12:50:57 CDT 2025: Terminating OBS
+Wed Apr 30 12:50:57 CDT 2025: Terminating Companion
+Wed Apr 30 12:50:57 CDT 2025: Companion terminated
+Wed Apr 30 12:50:57 CDT 2025: Terminating Safari
+Wed Apr 30 12:50:57 CDT 2025: Safari terminated
