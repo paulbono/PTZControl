@@ -142,3 +142,35 @@ Sat May  3 18:15:06 CDT 2025: Terminating Companion
 Sat May  3 18:15:06 CDT 2025: Companion was not running.
 Sat May  3 18:15:06 CDT 2025: Terminating Safari
 Sat May  3 18:15:06 CDT 2025: Safari terminated
+Wed May  7 11:10:19 CDT 2025: Starting initialization sequence with a 15-second delay.
+Wed May  7 11:10:34 CDT 2025: Starting OBS
+Wed May  7 11:10:39 CDT 2025: Starting Companion
+Wed May  7 11:10:54 CDT 2025: Starting Stream Deck
+Wed May  7 11:10:54 CDT 2025: Opening Safari with specified URLs
+Wed May  7 11:10:54 CDT 2025: Running WrapperScript On.sh
+Wed May  7 11:10:55 CDT 2025: Running query.sh
+Wed May  7 11:11:11 CDT 2025: Starting PTZControl SlideListener
+Wed May  7 11:58:53 CDT 2025: Starting startStream.sh
+Wed May  7 12:58:48 CDT 2025: Running Off.sh equivalent
+Wed May  7 12:58:53 CDT 2025: Terminating OBS
+Wed May  7 12:58:53 CDT 2025: Terminating Companion
+Wed May  7 12:58:53 CDT 2025: Companion terminated
+Wed May  7 12:58:53 CDT 2025: Terminating Safari
+Wed May  7 12:58:53 CDT 2025: Safari terminated
+Sat May 10 15:30:00 CDT 2025: Starting initialization sequence with a 15-second delay.
+Sat May 10 15:30:15 CDT 2025: Starting OBS
+Sat May 10 15:30:20 CDT 2025: Starting Companion
+Sat May 10 15:30:35 CDT 2025: Starting Stream Deck
+Sat May 10 15:30:35 CDT 2025: Opening Safari with specified URLs
+Sat May 10 15:30:36 CDT 2025: Running WrapperScript On.sh
+Sat May 10 15:30:36 CDT 2025: Running query.sh
+Sat May 10 16:58:00 CDT 2025: Running prep.sh equivalent
+Sat May 10 16:58:00 CDT 2025: Running prep.sh equivalent
+Sat May 10 16:58:00 CDT 2025: Starting PTZControl SlideListener
+Sat May 10 16:59:00 CDT 2025: Starting startStream.sh
+Sat May 10 18:15:00 CDT 2025: Running Off.sh equivalent
+Sat May 10 18:15:06 CDT 2025: Terminating OBS
+Sat May 10 18:15:06 CDT 2025: Terminating Companion
+Sat May 10 18:15:06 CDT 2025: Companion terminated
+Sat May 10 18:15:06 CDT 2025: Terminating Safari
+Sat May 10 18:15:06 CDT 2025: Safari terminated
